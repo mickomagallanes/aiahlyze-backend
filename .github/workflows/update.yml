@@ -1,0 +1,43 @@
+name: Market Data Updater
+
+on:
+  schedule:
+    - cron: '0 * * * *' # This means: "Run at minute 0 of every hour"
+  workflow_dispatch:      # This adds a button so you can run it manually to test
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checks out your repository code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Sets up the Python language environment
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      # Step 3: Installs the libraries from your requirements.txt file
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      # Step 4: Runs your script, securely passing in the API key
+      - name: Run Fetch Script
+        env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+        run: python fetch_data.py
+
+      # Step 5: Commits the new JSON files back to your repository
+      - name: Commit and Push
+        run: |
+          git config --global user.name "MarketBot"
+          git config --global user.email "bot@market.com"
+          # This command finds ALL .json files and adds them
+          git add *.json
+          # This line only commits if there are actual changes
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Update prices" && git push)
