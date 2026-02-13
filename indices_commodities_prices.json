@@ -1,25 +1,20 @@
 {
-  "last_updated_utc": "2026-02-13T13:15:44.373806",
+  "last_updated_utc": "2026-02-13T14:22:30.494681",
   "prices": [
     {
       "symbol": "^GSPC",
-      "price": NaN,
-      "change_percent": 0.0
+      "price": 6832.76,
+      "change_percent": -1.57
     },
     {
       "symbol": "^IXIC",
-      "price": NaN,
-      "change_percent": 0.0
+      "price": 22597.15,
+      "change_percent": -2.03
     },
     {
       "symbol": "^DJI",
-      "price": NaN,
-      "change_percent": 0.0
-    },
-    {
-      "symbol": "^PSI",
-      "price": NaN,
-      "change_percent": 0.0
+      "price": 49451.98,
+      "change_percent": -1.34
     },
     {
       "symbol": "^N225",
@@ -33,23 +28,23 @@
     },
     {
       "symbol": "^FTSE",
-      "price": 10394.12,
-      "change_percent": -0.08
+      "price": 10398.68,
+      "change_percent": -0.04
     },
     {
       "symbol": "^GDAXI",
-      "price": 24842.38,
-      "change_percent": 0.08
+      "price": 24912.46,
+      "change_percent": 0.36
     },
     {
       "symbol": "^FCHI",
-      "price": 8300.84,
-      "change_percent": -0.18
+      "price": 8315.93,
+      "change_percent": 0.01
     },
     {
       "symbol": "^STOXX50E",
-      "price": 5970.69,
-      "change_percent": -0.67
+      "price": 5985.14,
+      "change_percent": -0.43
     },
     {
       "symbol": "^AXJO",
@@ -58,49 +53,11 @@
     },
     {
       "symbol": "^BVSP",
-      "price": NaN,
-      "change_percent": 0.0
-    },
-    {
-      "symbol": "GC=F",
-      "price": 4990.3,
-      "change_percent": 0.81
-    },
-    {
-      "symbol": "SI=F",
-      "price": 77.88,
-      "change_percent": 3.59
-    },
-    {
-      "symbol": "CL=F",
-      "price": 62.67,
-      "change_percent": -0.51
-    },
-    {
-      "symbol": "BZ=F",
-      "price": 67.37,
-      "change_percent": -0.33
-    },
-    {
-      "symbol": "NG=F",
-      "price": 3.14,
-      "change_percent": -2.39
-    },
-    {
-      "symbol": "HG=F",
-      "price": 5.72,
-      "change_percent": -0.82
-    },
-    {
-      "symbol": "PL=F",
-      "price": 2031.4,
-      "change_percent": 1.48
-    },
-    {
-      "symbol": "PA=F",
-      "price": 1661.5,
-      "change_percent": 1.56
+      "price": 185236.22,
+      "change_percent": -1.35
     }
   ],
-  "failed_tickers": []
+  "failed_tickers": [
+    "^PSI"
+  ]
 }
