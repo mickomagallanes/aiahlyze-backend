@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-12T16:31:18.696808",
+  "last_updated_utc": "2026-02-13T15:41:51.111457",
   "tickers": [
     {
       "symbol": "GC=F",
@@ -11,19 +11,27 @@
     },
     {
       "symbol": "CL=F",
-      "name": "Crude Oil"
+      "name": "Crude Oil (WTI)"
     },
     {
-      "symbol": "^GSPC",
-      "name": "S&P 500 Index"
+      "symbol": "BZ=F",
+      "name": "Brent Crude Oil"
     },
     {
-      "symbol": "^IXIC",
-      "name": "NASDAQ Composite"
+      "symbol": "NG=F",
+      "name": "Natural Gas"
     },
     {
-      "symbol": "^PSI",
-      "name": "PSEi Index"
+      "symbol": "HG=F",
+      "name": "Copper"
+    },
+    {
+      "symbol": "PL=F",
+      "name": "Platinum"
+    },
+    {
+      "symbol": "PA=F",
+      "name": "Palladium"
     }
   ]
 }
