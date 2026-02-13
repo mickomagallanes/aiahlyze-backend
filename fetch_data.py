@@ -10,38 +10,32 @@ from io import StringIO
 
 # --- CONFIGURATION ---
 
-# Top 30 Philippine Stocks (by market cap)
+# Top Philippine Stocks - Using ADR/OTC tickers that trade on US markets
+# NOTE: Yahoo Finance does not support PSE stocks (.PS suffix)
+# Using ADR (American Depositary Receipt) and OTC tickers instead
 PH_STOCKS = [
-    {"symbol": "SM.PS", "name": "SM Investments Corporation"},
-    {"symbol": "BDO.PS", "name": "BDO Unibank"},
-    {"symbol": "ALI.PS", "name": "Ayala Land"},
-    {"symbol": "AC.PS", "name": "Ayala Corporation"},
-    {"symbol": "ICT.PS", "name": "International Container Terminal Services"},
-    {"symbol": "JFC.PS", "name": "Jollibee Foods Corporation"},
-    {"symbol": "BPI.PS", "name": "Bank of the Philippine Islands"},
-    {"symbol": "SMPH.PS", "name": "SM Prime Holdings"},
-    {"symbol": "TEL.PS", "name": "PLDT Inc."},
-    {"symbol": "MBT.PS", "name": "Metrobank"},
-    {"symbol": "GLO.PS", "name": "Globe Telecom"},
-    {"symbol": "URC.PS", "name": "Universal Robina Corporation"},
-    {"symbol": "GTCAP.PS", "name": "GT Capital Holdings"},
-    {"symbol": "DMC.PS", "name": "DMCI Holdings"},
-    {"symbol": "AEV.PS", "name": "Aboitiz Equity Ventures"},
-    {"symbol": "AP.PS", "name": "Aboitiz Power Corporation"},
-    {"symbol": "SECB.PS", "name": "Security Bank Corporation"},
-    {"symbol": "MEG.PS", "name": "Megaworld Corporation"},
-    {"symbol": "PGOLD.PS", "name": "Puregold Price Club"},
-    {"symbol": "RLC.PS", "name": "Robinsons Land Corporation"},
-    {"symbol": "CNPF.PS", "name": "Century Pacific Food"},
-    {"symbol": "MPI.PS", "name": "Metro Pacific Investments Corporation"},
-    {"symbol": "BLOOM.PS", "name": "Bloomberry Resorts Corporation"},
-    {"symbol": "MONDE.PS", "name": "Monde Nissin Corporation"},
-    {"symbol": "LTG.PS", "name": "LT Group"},
-    {"symbol": "AGI.PS", "name": "Alliance Global Group"},
-    {"symbol": "SCC.PS", "name": "Semirara Mining and Power Corporation"},
-    {"symbol": "PCOR.PS", "name": "Petron Corporation"},
-    {"symbol": "CEI.PS", "name": "Crown Equities"},
-    {"symbol": "SEVN.PS", "name": "Philippine Seven Corporation"}
+    {"symbol": "PHI", "name": "PLDT Inc. (NYSE ADR)"},
+    {"symbol": "BPHLY", "name": "Bank of the Philippine Islands (ADR)"},
+    {"symbol": "BDOUY", "name": "BDO Unibank (ADR)"},
+    {"symbol": "BDOUF", "name": "BDO Unibank (OTC)"},
+    {"symbol": "AYALY", "name": "Ayala Corporation (ADR)"},
+    {"symbol": "ABTZY", "name": "Aboitiz Equity Ventures (ADR)"},
+    {"symbol": "ABZPY", "name": "Aboitiz Power Corporation (ADR)"},
+    {"symbol": "ALGGY", "name": "Alliance Global Group (ADR)"},
+    {"symbol": "ACMDY", "name": "Atlas Consolidated Mining (ADR)"},
+    {"symbol": "AYAAY", "name": "Ayala Land (ADR)"},
+    {"symbol": "MGAWY", "name": "Megaworld Corporation (ADR)"},
+    {"symbol": "PRGLY", "name": "Puregold Price Club (ADR)"},
+    {"symbol": "CEBUY", "name": "Cebu Air (ADR)"},
+    {"symbol": "DMCHY", "name": "DMCI Holdings (ADR)"},
+    {"symbol": "MTPOY", "name": "Metrobank (ADR)"},
+    {"symbol": "JBFCF", "name": "Jollibee Foods Corporation (OTC)"},
+    {"symbol": "SPHXF", "name": "SM Prime Holdings (OTC)"},
+    {"symbol": "GTMEF", "name": "Globe Telecom (OTC)"},
+    {"symbol": "UVRBF", "name": "Universal Robina Corporation (OTC)"},
+    {"symbol": "SYBJF", "name": "Security Bank Corporation (OTC)"},
+    {"symbol": "RBLAY", "name": "Robinsons Land Corporation (ADR)"},
+    {"symbol": "MNDDF", "name": "Monde Nissin Corporation (OTC)"}
 ]
 
 # Major Global Indices (no commodities/metals, no PSI - always fails)
