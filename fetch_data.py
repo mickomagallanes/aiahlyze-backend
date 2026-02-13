@@ -4,8 +4,9 @@ import requests
 import json
 import time
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 import math
+from io import StringIO
 
 # --- CONFIGURATION ---
 
@@ -43,12 +44,11 @@ PH_STOCKS = [
     {"symbol": "SEVN.PS", "name": "Philippine Seven Corporation"}
 ]
 
-# Major Global Indices (no commodities/metals)
+# Major Global Indices (no commodities/metals, no PSI - always fails)
 INDICES = [
     {"symbol": "^GSPC", "name": "S&P 500 Index"},
     {"symbol": "^IXIC", "name": "NASDAQ Composite"},
     {"symbol": "^DJI", "name": "Dow Jones Industrial Average"},
-    {"symbol": "^PSI", "name": "PSEi Index (Philippines)"},
     {"symbol": "^N225", "name": "Nikkei 225 (Japan)"},
     {"symbol": "^HSI", "name": "Hang Seng Index (Hong Kong)"},
     {"symbol": "^FTSE", "name": "FTSE 100 (UK)"},
@@ -57,6 +57,18 @@ INDICES = [
     {"symbol": "^STOXX50E", "name": "Euro Stoxx 50"},
     {"symbol": "^AXJO", "name": "ASX 200 (Australia)"},
     {"symbol": "^BVSP", "name": "Bovespa Index (Brazil)"}
+]
+
+# Metals and Commodities (separate tracking)
+METALS_COMMODITIES = [
+    {"symbol": "GC=F", "name": "Gold"},
+    {"symbol": "SI=F", "name": "Silver"},
+    {"symbol": "CL=F", "name": "Crude Oil (WTI)"},
+    {"symbol": "BZ=F", "name": "Brent Crude Oil"},
+    {"symbol": "NG=F", "name": "Natural Gas"},
+    {"symbol": "HG=F", "name": "Copper"},
+    {"symbol": "PL=F", "name": "Platinum"},
+    {"symbol": "PA=F", "name": "Palladium"}
 ]
 
 def save_json(data, filename):
@@ -70,7 +82,20 @@ def get_top_500_stocks_manifest():
     print("🌍 Building Top 500 stocks manifest (S&P 500)...")
     manifest = []
     try:
-        table = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')[0]
+        # Wikipedia blocks default pandas User-Agent, so we need to set a custom one
+        url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        
+        # Fetch the HTML with proper headers
+        response = requests.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+        
+        # Parse the table from the HTML content (use StringIO for pandas 3.x compatibility)
+        tables = pd.read_html(StringIO(response.text))
+        table = tables[0]
+        
         for _, row in table.iterrows():
             symbol = str(row.get('Symbol', '')).strip()
             name = str(row.get('Security', symbol)).strip()
@@ -331,9 +356,20 @@ def main():
     
     fetch_yahoo_prices(INDICES, "indices_commodities_prices.json", batch_size=6)
     
+    # 6. Metals & Commodities
+    print("\n" + "=" * 60)
+    print("🥇 Processing Metals & Commodities...")
+    save_json({
+        "last_updated_utc": datetime.utcnow().isoformat(),
+        "tickers": METALS_COMMODITIES
+    }, "metals_indices_manifest.json")
+    
+    fetch_yahoo_prices(METALS_COMMODITIES, "metals_indices_prices.json", batch_size=8)
+    
     print("\n" + "=" * 60)
     print("✅ COMPLETE")
     print("=" * 60)
+
 
 if __name__ == "__main__":
     main()
