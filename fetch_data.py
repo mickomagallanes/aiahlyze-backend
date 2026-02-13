@@ -5,6 +5,7 @@ import json
 import time
 import os
 from datetime import datetime
+import math
 
 # --- CONFIGURATION ---
 
@@ -42,8 +43,8 @@ PH_STOCKS = [
     {"symbol": "SEVN.PS", "name": "Philippine Seven Corporation"}
 ]
 
-# Major Global Indices and Commodities
-INDICES_AND_COMMODITIES = [
+# Major Global Indices (no commodities/metals)
+INDICES = [
     {"symbol": "^GSPC", "name": "S&P 500 Index"},
     {"symbol": "^IXIC", "name": "NASDAQ Composite"},
     {"symbol": "^DJI", "name": "Dow Jones Industrial Average"},
@@ -55,15 +56,7 @@ INDICES_AND_COMMODITIES = [
     {"symbol": "^FCHI", "name": "CAC 40 (France)"},
     {"symbol": "^STOXX50E", "name": "Euro Stoxx 50"},
     {"symbol": "^AXJO", "name": "ASX 200 (Australia)"},
-    {"symbol": "^BVSP", "name": "Bovespa Index (Brazil)"},
-    {"symbol": "GC=F", "name": "Gold Futures"},
-    {"symbol": "SI=F", "name": "Silver Futures"},
-    {"symbol": "CL=F", "name": "Crude Oil WTI Futures"},
-    {"symbol": "BZ=F", "name": "Brent Crude Oil Futures"},
-    {"symbol": "NG=F", "name": "Natural Gas Futures"},
-    {"symbol": "HG=F", "name": "Copper Futures"},
-    {"symbol": "PL=F", "name": "Platinum Futures"},
-    {"symbol": "PA=F", "name": "Palladium Futures"}
+    {"symbol": "^BVSP", "name": "Bovespa Index (Brazil)"}
 ]
 
 def save_json(data, filename):
@@ -72,126 +65,97 @@ def save_json(data, filename):
         json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"✅ Successfully saved {len(data.get('prices', data.get('tickers', [])))} items to {filename}")
 
-def get_global_stocks_manifest():
-    """
-    Returns a manifest of ~1000 global stocks:
-    - S&P 500 (USA - top 500)
-    - FTSE 100 (UK - top 100)
-    - DAX 40 (Germany - top 40)
-    - CAC 40 (France - top 40)
-    - Nikkei 225 (Japan - top 225)
-    - Hang Seng (Hong Kong - top 50)
-    - ASX 200 (Australia - top 50 from 200)
-    
-    Total: ~1000 stocks
-    """
-    print("🌍 Scraping global stocks manifest...")
+def get_top_500_stocks_manifest():
+    """Returns a deterministic Top 500 stock manifest (S&P 500)."""
+    print("🌍 Building Top 500 stocks manifest (S&P 500)...")
     manifest = []
-    
-    # 1. S&P 500 (USA)
     try:
-        print("  → S&P 500 (USA)...")
         table = pd.read_html('https://en.wikipedia.org/wiki/List_of_S%26P_500_companies')[0]
-        sp500 = table[['Symbol', 'Security']].rename(columns={'Symbol': 'symbol', 'Security': 'name'}).to_dict('records')
-        manifest.extend(sp500)
-        print(f"    ✓ Added {len(sp500)} stocks")
-    except Exception as e:
-        print(f"    ✗ Error: {e}")
-    
-    # 2. FTSE 100 (UK)
-    try:
-        print("  → FTSE 100 (UK)...")
-        table = pd.read_html('https://en.wikipedia.org/wiki/FTSE_100_Index')[4]
-        ftse = []
         for _, row in table.iterrows():
-            if pd.notna(row.get('Ticker')):
-                symbol = str(row['Ticker']).strip()
-                # UK stocks on Yahoo need .L suffix
-                if not symbol.endswith('.L'):
-                    symbol = f"{symbol}.L"
-                ftse.append({"symbol": symbol, "name": str(row.get('Company', symbol))})
-        manifest.extend(ftse)
-        print(f"    ✓ Added {len(ftse)} stocks")
+            symbol = str(row.get('Symbol', '')).strip()
+            name = str(row.get('Security', symbol)).strip()
+            if not symbol:
+                continue
+            # Yahoo uses '-' instead of '.' for some US tickers (e.g., BRK.B -> BRK-B)
+            yahoo_symbol = symbol.replace('.', '-')
+            manifest.append({"symbol": yahoo_symbol, "name": name})
+        print(f"📊 Total top stocks manifest: {len(manifest)}")
     except Exception as e:
-        print(f"    ✗ Error: {e}")
-    
-    # 3. DAX 40 (Germany)
-    try:
-        print("  → DAX 40 (Germany)...")
-        table = pd.read_html('https://en.wikipedia.org/wiki/DAX')[4]
-        dax = []
-        for _, row in table.iterrows():
-            if pd.notna(row.get('Ticker symbol')):
-                symbol = str(row['Ticker symbol']).strip()
-                # German stocks on Yahoo need .DE suffix
-                if not symbol.endswith('.DE'):
-                    symbol = f"{symbol}.DE"
-                dax.append({"symbol": symbol, "name": str(row.get('Company', symbol))})
-        manifest.extend(dax)
-        print(f"    ✓ Added {len(dax)} stocks")
-    except Exception as e:
-        print(f"    ✗ Error: {e}")
-    
-    # 4. CAC 40 (France)
-    try:
-        print("  → CAC 40 (France)...")
-        table = pd.read_html('https://en.wikipedia.org/wiki/CAC_40')[4]
-        cac = []
-        for _, row in table.iterrows():
-            if pd.notna(row.get('Ticker')):
-                symbol = str(row['Ticker']).strip()
-                # French stocks on Yahoo need .PA suffix
-                if not symbol.endswith('.PA'):
-                    symbol = f"{symbol}.PA"
-                cac.append({"symbol": symbol, "name": str(row.get('Company', symbol))})
-        manifest.extend(cac)
-        print(f"    ✓ Added {len(cac)} stocks")
-    except Exception as e:
-        print(f"    ✗ Error: {e}")
-    
-    # 5. Nikkei 225 (Japan) - Top 100 only (full 225 is too much)
-    try:
-        print("  → Nikkei 225 (Japan - top 100)...")
-        table = pd.read_html('https://en.wikipedia.org/wiki/Nikkei_225')[3]
-        nikkei = []
-        count = 0
-        for _, row in table.iterrows():
-            if count >= 100:
-                break
-            if pd.notna(row.get('Code')):
-                code = str(row['Code']).strip()
-                # Japanese stocks on Yahoo need .T suffix
-                symbol = f"{code}.T"
-                nikkei.append({"symbol": symbol, "name": str(row.get('Name', symbol))})
-                count += 1
-        manifest.extend(nikkei)
-        print(f"    ✓ Added {len(nikkei)} stocks")
-    except Exception as e:
-        print(f"    ✗ Error: {e}")
-    
-    # 6. Hang Seng (Hong Kong) - Top 50
-    try:
-        print("  → Hang Seng (Hong Kong - top 50)...")
-        table = pd.read_html('https://en.wikipedia.org/wiki/Hang_Seng_Index')[3]
-        hsi = []
-        count = 0
-        for _, row in table.iterrows():
-            if count >= 50:
-                break
-            if pd.notna(row.get('Stock code')):
-                code = str(row['Stock code']).strip()
-                # HK stocks on Yahoo need .HK suffix, and code should be padded to 4 digits
-                code_padded = code.zfill(4)
-                symbol = f"{code_padded}.HK"
-                hsi.append({"symbol": symbol, "name": str(row.get('Stock name', symbol))})
-                count += 1
-        manifest.extend(hsi)
-        print(f"    ✓ Added {len(hsi)} stocks")
-    except Exception as e:
-        print(f"    ✗ Error: {e}")
-    
-    print(f"📊 Total global stocks manifest: {len(manifest)}")
+        print(f"✗ Error building top stocks manifest: {e}")
     return manifest
+
+
+def _safe_float(value):
+    """Return a float if value is finite, otherwise None."""
+    try:
+        val = float(value)
+        if math.isnan(val) or math.isinf(val):
+            return None
+        return val
+    except Exception:
+        return None
+
+
+def _finnhub_quote(symbol):
+    """Fallback using Finnhub API for US stocks."""
+    api_key = os.getenv("FINNHUB_API_KEY")
+    base_url = os.getenv("FINNHUB_API_URL", "https://finnhub.io/api/v1")
+    
+    if not api_key:
+        return None, None
+    
+    # Finnhub doesn't support Yahoo-style suffixes, skip non-US symbols
+    if any(x in symbol for x in ['.PS', '.L', '.DE', '.PA', '.T', '.HK', '^']):
+        return None, None
+    
+    try:
+        url = f"{base_url}/quote?symbol={symbol}&token={api_key}"
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        current = _safe_float(data.get('c'))
+        prev_close = _safe_float(data.get('pc'))
+        
+        if current is None or current == 0:
+            return None, None
+        
+        change_percent = 0.0
+        if prev_close is not None and prev_close != 0:
+            change_percent = ((current - prev_close) / prev_close) * 100
+        
+        return round(current, 2), round(change_percent, 2)
+    except Exception:
+        return None, None
+
+
+def _fallback_quote(symbol):
+    """Try single-symbol fallback via yfinance.Ticker for better reliability."""
+    try:
+        t = yf.Ticker(symbol)
+        fi = getattr(t, 'fast_info', None) or {}
+        price = _safe_float(fi.get('lastPrice')) or _safe_float(fi.get('regularMarketPrice'))
+        prev_close = _safe_float(fi.get('previousClose'))
+
+        if price is None:
+            hist = t.history(period='5d', interval='1d')
+            if hist is not None and not hist.empty:
+                close_series = hist.get('Close')
+                if close_series is not None and len(close_series) > 0:
+                    price = _safe_float(close_series.iloc[-1])
+                if len(close_series) >= 2:
+                    prev_close = _safe_float(close_series.iloc[-2])
+
+        if price is None:
+            return None, None
+
+        change_percent = 0.0
+        if prev_close is not None and prev_close != 0:
+            change_percent = ((price - prev_close) / prev_close) * 100
+
+        return round(price, 2), round(change_percent, 2)
+    except Exception:
+        return None, None
 
 def fetch_crypto_data():
     """Fetches Top 500 Crypto, creates a manifest AND a price file."""
@@ -257,28 +221,56 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
             
             for symbol in batch:
                 try:
+                    close_price = None
+                    open_price = None
+
                     # Handle single ticker vs multi-ticker dataframe structure
                     if len(batch) == 1:
                         df = data
                     else:
-                        df = data[symbol]
-                    
-                    if df.empty or len(df) == 0:
-                        failed.append(symbol)
+                        try:
+                            df = data[symbol]
+                        except Exception:
+                            df = pd.DataFrame()
+
+                    if df is not None and not df.empty and len(df) > 0:
+                        close_series = df.get('Close')
+                        open_series = df.get('Open')
+                        if close_series is not None and len(close_series) > 0:
+                            close_price = _safe_float(close_series.iloc[-1])
+                        if open_series is not None and len(open_series) > 0:
+                            open_price = _safe_float(open_series.iloc[-1])
+
+                    # Fallback if batch download didn't give a valid price
+                    if close_price is None:
+                        # Try yfinance single-ticker fallback first
+                        close_price, fallback_change = _fallback_quote(symbol)
+                        
+                        # If yfinance also failed, try Finnhub as last resort
+                        if close_price is None:
+                            close_price, fallback_change = _finnhub_quote(symbol)
+                        
+                        if close_price is None:
+                            failed.append(symbol)
+                            continue
+                        
+                        prices.append({
+                            "symbol": symbol,
+                            "price": close_price,
+                            "change_percent": fallback_change if fallback_change is not None else 0.0
+                        })
                         continue
-                    
-                    close_price = df['Close'].iloc[-1]
-                    open_price = df['Open'].iloc[-1]
-                    
-                    # Calculate percent change
-                    if pd.notna(open_price) and open_price != 0:
+
+                    # Calculate percent change from open when available
+                    if open_price is not None and open_price != 0:
                         change_percent = ((close_price - open_price) / open_price) * 100
                     else:
-                        change_percent = 0
-                    
+                        _, fallback_change = _fallback_quote(symbol)
+                        change_percent = fallback_change if fallback_change is not None else 0.0
+
                     prices.append({
                         "symbol": symbol,
-                        "price": round(float(close_price), 2),
+                        "price": round(close_price, 2),
                         "change_percent": round(float(change_percent), 2)
                     })
                     
@@ -311,13 +303,13 @@ def main():
     # 1. Crypto (Top 500)
     fetch_crypto_data()
     
-    # 2. Global Stocks (~1000 stocks)
+    # 2. Top 500 Stocks (S&P 500)
     print("\n" + "=" * 60)
-    global_manifest = get_global_stocks_manifest()
+    top_500_manifest = get_top_500_stocks_manifest()
     
-    # 3. Add Philippine Stocks
+    # 3. Add Philippine Stocks (optional local coverage)
     print("\n🇵🇭 Adding Philippine Stocks...")
-    all_stocks_manifest = global_manifest + PH_STOCKS
+    all_stocks_manifest = top_500_manifest + PH_STOCKS
     print(f"  ✓ Added {len(PH_STOCKS)} PH stocks")
     print(f"📊 Total stocks manifest: {len(all_stocks_manifest)}")
     
@@ -329,15 +321,15 @@ def main():
     # 4. Fetch Stock Prices
     fetch_yahoo_prices(all_stocks_manifest, "stocks_prices.json", batch_size=50)
     
-    # 5. Indices and Commodities
+    # 5. Indices only
     print("\n" + "=" * 60)
-    print("📊 Processing Indices & Commodities...")
+    print("📊 Processing Indices...")
     save_json({
         "last_updated_utc": datetime.utcnow().isoformat(),
-        "tickers": INDICES_AND_COMMODITIES
+        "tickers": INDICES
     }, "indices_commodities_manifest.json")
     
-    fetch_yahoo_prices(INDICES_AND_COMMODITIES, "indices_commodities_prices.json", batch_size=10)
+    fetch_yahoo_prices(INDICES, "indices_commodities_prices.json", batch_size=6)
     
     print("\n" + "=" * 60)
     print("✅ COMPLETE")

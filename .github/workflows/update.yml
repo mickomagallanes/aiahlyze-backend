@@ -2,8 +2,8 @@ name: Market Data Updater
 
 on:
   schedule:
-    - cron: '0 * * * *' # This means: "Run at minute 0 of every hour"
-  workflow_dispatch:      # This adds a button so you can run it manually to test
+    - cron: "0 * * * *" # This means: "Run at minute 0 of every hour"
+  workflow_dispatch: # This adds a button so you can run it manually to test
 
 permissions:
   contents: write
@@ -20,7 +20,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.9"
 
       # Step 3: Installs the libraries from your requirements.txt file
       - name: Install Dependencies
@@ -30,6 +30,8 @@ jobs:
       - name: Run Fetch Script
         env:
           COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          FINNHUB_API_URL: ${{ secrets.FINNHUB_API_URL }}
         run: python fetch_data.py
 
       # Step 5: Commits the new JSON files back to your repository
