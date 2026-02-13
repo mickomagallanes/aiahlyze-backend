@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-13T20:48:05.097697",
+  "last_updated_utc": "2026-02-13T21:42:35.176687",
   "tickers": [
     {
       "symbol": "BTC",
@@ -52,14 +52,14 @@
       "id": "figure-heloc"
     },
     {
-      "symbol": "WBT",
-      "name": "WhiteBIT Coin",
-      "id": "whitebit"
-    },
-    {
       "symbol": "BCH",
       "name": "Bitcoin Cash",
       "id": "bitcoin-cash"
+    },
+    {
+      "symbol": "WBT",
+      "name": "WhiteBIT Coin",
+      "id": "whitebit"
     },
     {
       "symbol": "ADA",
@@ -122,14 +122,14 @@
       "id": "litecoin"
     },
     {
-      "symbol": "DAI",
-      "name": "Dai",
-      "id": "dai"
-    },
-    {
       "symbol": "HBAR",
       "name": "Hedera",
       "id": "hedera-hashgraph"
+    },
+    {
+      "symbol": "DAI",
+      "name": "Dai",
+      "id": "dai"
     },
     {
       "symbol": "AVAX",
@@ -142,14 +142,14 @@
       "id": "paypal-usd"
     },
     {
-      "symbol": "SUI",
-      "name": "Sui",
-      "id": "sui"
-    },
-    {
       "symbol": "SHIB",
       "name": "Shiba Inu",
       "id": "shiba-inu"
+    },
+    {
+      "symbol": "SUI",
+      "name": "Sui",
+      "id": "sui"
     },
     {
       "symbol": "TON",
@@ -232,9 +232,9 @@
       "id": "okb"
     },
     {
-      "symbol": "SKY",
-      "name": "Sky",
-      "id": "sky"
+      "symbol": "TAO",
+      "name": "Bittensor",
+      "id": "bittensor"
     },
     {
       "symbol": "PEPE",
@@ -242,14 +242,24 @@
       "id": "pepe"
     },
     {
-      "symbol": "TAO",
-      "name": "Bittensor",
-      "id": "bittensor"
+      "symbol": "SKY",
+      "name": "Sky",
+      "id": "sky"
     },
     {
       "symbol": "USYC",
       "name": "Circle USYC",
       "id": "hashnote-usyc"
+    },
+    {
+      "symbol": "ZEN",
+      "name": "Horizen",
+      "id": "zencash"
+    },
+    {
+      "symbol": "VVV",
+      "name": "Venice Token",
+      "id": "venice-token"
     },
     {
       "symbol": "REUSD",
@@ -267,9 +277,9 @@
       "id": "frax-usd"
     },
     {
-      "symbol": "COW",
-      "name": "CoW Protocol",
-      "id": "cow-protocol"
+      "symbol": "DEXE",
+      "name": "DeXe",
+      "id": "dexe"
     },
     {
       "symbol": "W",
@@ -282,9 +292,9 @@
       "id": "unibase"
     },
     {
-      "symbol": "DEXE",
-      "name": "DeXe",
-      "id": "dexe"
+      "symbol": "YFI",
+      "name": "yearn.finance",
+      "id": "yearn-finance"
     },
     {
       "symbol": "TFUEL",
@@ -292,14 +302,9 @@
       "id": "theta-fuel"
     },
     {
-      "symbol": "YFI",
-      "name": "yearn.finance",
-      "id": "yearn-finance"
-    },
-    {
-      "symbol": "EDU",
-      "name": "Open Campus",
-      "id": "edu-coin"
+      "symbol": "TKX",
+      "name": "Tokenize Xchange",
+      "id": "tokenize-xchange"
     },
     {
       "symbol": "GAS",
@@ -307,9 +312,9 @@
       "id": "gas"
     },
     {
-      "symbol": "TKX",
-      "name": "Tokenize Xchange",
-      "id": "tokenize-xchange"
+      "symbol": "EDU",
+      "name": "Open Campus",
+      "id": "edu-coin"
     },
     {
       "symbol": "SOSO",
@@ -342,16 +347,6 @@
       "id": "cash-4"
     },
     {
-      "symbol": "VVV",
-      "name": "Venice Token",
-      "id": "venice-token"
-    },
-    {
-      "symbol": "QTUM",
-      "name": "Qtum",
-      "id": "qtum"
-    },
-    {
       "symbol": "MNEE",
       "name": "MNEE USD Stablecoin",
       "id": "mnee-usd-stablecoin"
@@ -360,6 +355,11 @@
       "symbol": "XVG",
       "name": "Verge",
       "id": "verge"
+    },
+    {
+      "symbol": "QTUM",
+      "name": "Qtum",
+      "id": "qtum"
     },
     {
       "symbol": "SNX",
@@ -377,11 +377,6 @@
       "id": "reserve-rights-token"
     },
     {
-      "symbol": "币安人生",
-      "name": "币安人生 (BinanceLife)",
-      "id": "bianrensheng"
-    },
-    {
       "symbol": "PC0000023",
       "name": "Tradable Singapore Fintech SSL",
       "id": "tradable-singapore-fintech-ssl-2"
@@ -390,6 +385,16 @@
       "symbol": "USDR",
       "name": "Ring USD",
       "id": "ring-usd"
+    },
+    {
+      "symbol": "币安人生",
+      "name": "币安人生 (BinanceLife)",
+      "id": "bianrensheng"
+    },
+    {
+      "symbol": "TOSHI",
+      "name": "Toshi",
+      "id": "toshi"
     },
     {
       "symbol": "RVN",
@@ -402,11 +407,6 @@
       "id": "nxm"
     },
     {
-      "symbol": "TOSHI",
-      "name": "Toshi",
-      "id": "toshi"
-    },
-    {
       "symbol": "PGOLD",
       "name": "Pleasing Gold",
       "id": "pleasing-gold"
@@ -415,6 +415,11 @@
       "symbol": "ZORA",
       "name": "Zora",
       "id": "zora"
+    },
+    {
+      "symbol": "DOG",
+      "name": "Dog (Bitcoin)",
+      "id": "dog-go-to-the-moon-rune"
     },
     {
       "symbol": "ONYC",
@@ -427,14 +432,14 @@
       "id": "oasis-network"
     },
     {
-      "symbol": "DOG",
-      "name": "Dog (Bitcoin)",
-      "id": "dog-go-to-the-moon-rune"
-    },
-    {
       "symbol": "GRASS",
       "name": "Grass",
       "id": "grass"
+    },
+    {
+      "symbol": "CORE",
+      "name": "Core",
+      "id": "coredaoorg"
     },
     {
       "symbol": "BAN",
@@ -442,9 +447,9 @@
       "id": "comedian"
     },
     {
-      "symbol": "CORE",
-      "name": "Core",
-      "id": "coredaoorg"
+      "symbol": "AKT",
+      "name": "Akash Network",
+      "id": "akash-network"
     },
     {
       "symbol": "XDAI",
@@ -455,11 +460,6 @@
       "symbol": "ZRX",
       "name": "0x Protocol",
       "id": "0x"
-    },
-    {
-      "symbol": "AKT",
-      "name": "Akash Network",
-      "id": "akash-network"
     },
     {
       "symbol": "HOME",
@@ -492,19 +492,14 @@
       "id": "bankercoin-2"
     },
     {
-      "symbol": "CCD",
-      "name": "Concordium",
-      "id": "concordium"
-    },
-    {
-      "symbol": "MINA",
-      "name": "Mina Protocol",
-      "id": "mina-protocol"
-    },
-    {
       "symbol": "DYDX",
       "name": "dYdX",
       "id": "dydx-chain"
+    },
+    {
+      "symbol": "CCD",
+      "name": "Concordium",
+      "id": "concordium"
     },
     {
       "symbol": "CTC",
@@ -512,24 +507,24 @@
       "id": "creditcoin-2"
     },
     {
-      "symbol": "LUX",
-      "name": "Luxxcoin",
-      "id": "luxxcoin"
-    },
-    {
-      "symbol": "ARC",
-      "name": "AI Rig Complex",
-      "id": "ai-rig-complex"
-    },
-    {
-      "symbol": "INI",
-      "name": "INI",
-      "id": "ini"
+      "symbol": "MINA",
+      "name": "Mina Protocol",
+      "id": "mina-protocol"
     },
     {
       "symbol": "RAVE",
       "name": "RaveDAO",
       "id": "ravedao"
+    },
+    {
+      "symbol": "LUX",
+      "name": "Luxxcoin",
+      "id": "luxxcoin"
+    },
+    {
+      "symbol": "INI",
+      "name": "INI",
+      "id": "ini"
     },
     {
       "symbol": "JUSD",
@@ -542,9 +537,9 @@
       "id": "shuffle-2"
     },
     {
-      "symbol": "IRYS",
-      "name": "Irys",
-      "id": "irys"
+      "symbol": "PIEVERSE",
+      "name": "Pieverse",
+      "id": "pieverse"
     },
     {
       "symbol": "AIOZ",
@@ -552,19 +547,14 @@
       "id": "aioz-network"
     },
     {
-      "symbol": "MAG7.SSI",
-      "name": "MAG7.ssi",
-      "id": "mag7-ssi"
-    },
-    {
       "symbol": "VCNT",
       "name": "ViciCoin",
       "id": "vicicoin"
     },
     {
-      "symbol": "FOGO",
-      "name": "Fogo",
-      "id": "fogo"
+      "symbol": "MAG7.SSI",
+      "name": "MAG7.ssi",
+      "id": "mag7-ssi"
     },
     {
       "symbol": "T",
@@ -572,9 +562,19 @@
       "id": "threshold-network-token"
     },
     {
-      "symbol": "PIEVERSE",
-      "name": "Pieverse",
-      "id": "pieverse"
+      "symbol": "ARC",
+      "name": "AI Rig Complex",
+      "id": "ai-rig-complex"
+    },
+    {
+      "symbol": "IRYS",
+      "name": "Irys",
+      "id": "irys"
+    },
+    {
+      "symbol": "FOGO",
+      "name": "Fogo",
+      "id": "fogo"
     },
     {
       "symbol": "SWOP",
