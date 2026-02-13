@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-13T16:44:48.578700",
+  "last_updated_utc": "2026-02-13T16:56:41.163344",
   "tickers": [
     {
       "symbol": "BTC",
@@ -207,14 +207,14 @@
       "id": "blackrock-usd-institutional-digital-liquidity-fund"
     },
     {
-      "symbol": "AAVE",
-      "name": "Aave",
-      "id": "aave"
-    },
-    {
       "symbol": "ASTER",
       "name": "Aster",
       "id": "aster-2"
+    },
+    {
+      "symbol": "AAVE",
+      "name": "Aave",
+      "id": "aave"
     },
     {
       "symbol": "USDF",
@@ -232,14 +232,14 @@
       "id": "okb"
     },
     {
-      "symbol": "PEPE",
-      "name": "Pepe",
-      "id": "pepe"
-    },
-    {
       "symbol": "SKY",
       "name": "Sky",
       "id": "sky"
+    },
+    {
+      "symbol": "PEPE",
+      "name": "Pepe",
+      "id": "pepe"
     },
     {
       "symbol": "USYC",
@@ -252,9 +252,9 @@
       "id": "meteora"
     },
     {
-      "symbol": "ZEN",
-      "name": "Horizen",
-      "id": "zencash"
+      "symbol": "REUSD",
+      "name": "Re Protocol reUSD",
+      "id": "re-protocol-reusd"
     },
     {
       "symbol": "FRXUSD",
@@ -267,14 +267,14 @@
       "id": "wormhole"
     },
     {
-      "symbol": "UB",
-      "name": "Unibase",
-      "id": "unibase"
-    },
-    {
       "symbol": "EDU",
       "name": "Open Campus",
       "id": "edu-coin"
+    },
+    {
+      "symbol": "UB",
+      "name": "Unibase",
+      "id": "unibase"
     },
     {
       "symbol": "COW",
@@ -292,14 +292,14 @@
       "id": "theta-fuel"
     },
     {
-      "symbol": "GAS",
-      "name": "Gas",
-      "id": "gas"
-    },
-    {
       "symbol": "TKX",
       "name": "Tokenize Xchange",
       "id": "tokenize-xchange"
+    },
+    {
+      "symbol": "GAS",
+      "name": "Gas",
+      "id": "gas"
     },
     {
       "symbol": "CHEEMS",
@@ -317,14 +317,19 @@
       "id": "aethir"
     },
     {
-      "symbol": "STAC",
-      "name": "Securitize Tokenized AAA CLO Fund",
-      "id": "securitize-tokenized-aaa-clo-fund"
+      "symbol": "VVV",
+      "name": "Venice Token",
+      "id": "venice-token"
     },
     {
       "symbol": "AVUSD",
       "name": "Avant USD",
       "id": "avant-usd"
+    },
+    {
+      "symbol": "STAC",
+      "name": "Securitize Tokenized AAA CLO Fund",
+      "id": "securitize-tokenized-aaa-clo-fund"
     },
     {
       "symbol": "CASH",
@@ -337,19 +342,14 @@
       "id": "qtum"
     },
     {
-      "symbol": "VVV",
-      "name": "Venice Token",
-      "id": "venice-token"
+      "symbol": "MNEE",
+      "name": "MNEE USD Stablecoin",
+      "id": "mnee-usd-stablecoin"
     },
     {
       "symbol": "DEXE",
       "name": "DeXe",
       "id": "dexe"
-    },
-    {
-      "symbol": "MNEE",
-      "name": "MNEE USD Stablecoin",
-      "id": "mnee-usd-stablecoin"
     },
     {
       "symbol": "XVG",
@@ -387,11 +387,6 @@
       "id": "ring-usd"
     },
     {
-      "symbol": "DOG",
-      "name": "Dog (Bitcoin)",
-      "id": "dog-go-to-the-moon-rune"
-    },
-    {
       "symbol": "NXM",
       "name": "Nexus Mutual",
       "id": "nxm"
@@ -402,14 +397,9 @@
       "id": "ravencoin"
     },
     {
-      "symbol": "ZORA",
-      "name": "Zora",
-      "id": "zora"
-    },
-    {
-      "symbol": "PGOLD",
-      "name": "Pleasing Gold",
-      "id": "pleasing-gold"
+      "symbol": "DOG",
+      "name": "Dog (Bitcoin)",
+      "id": "dog-go-to-the-moon-rune"
     },
     {
       "symbol": "ROSE",
@@ -417,14 +407,24 @@
       "id": "oasis-network"
     },
     {
-      "symbol": "ARC",
-      "name": "AI Rig Complex",
-      "id": "ai-rig-complex"
+      "symbol": "PGOLD",
+      "name": "Pleasing Gold",
+      "id": "pleasing-gold"
+    },
+    {
+      "symbol": "ZORA",
+      "name": "Zora",
+      "id": "zora"
     },
     {
       "symbol": "ONYC",
       "name": "Onchain Yield Coin",
       "id": "onyc"
+    },
+    {
+      "symbol": "ARC",
+      "name": "AI Rig Complex",
+      "id": "ai-rig-complex"
     },
     {
       "symbol": "HOME",
@@ -467,11 +467,6 @@
       "id": "comedian"
     },
     {
-      "symbol": "BNKR",
-      "name": "BankrCoin",
-      "id": "bankercoin-2"
-    },
-    {
       "symbol": "USDA",
       "name": "USDA",
       "id": "usda-3"
@@ -487,24 +482,29 @@
       "id": "zilliqa"
     },
     {
-      "symbol": "WHITEWHALE",
-      "name": "The White Whale",
-      "id": "the-white-whale"
-    },
-    {
       "symbol": "TOSHI",
       "name": "Toshi",
       "id": "toshi"
     },
     {
-      "symbol": "CTC",
-      "name": "Creditcoin",
-      "id": "creditcoin-2"
+      "symbol": "BNKR",
+      "name": "BankrCoin",
+      "id": "bankercoin-2"
+    },
+    {
+      "symbol": "WHITEWHALE",
+      "name": "The White Whale",
+      "id": "the-white-whale"
     },
     {
       "symbol": "MINA",
       "name": "Mina Protocol",
       "id": "mina-protocol"
+    },
+    {
+      "symbol": "CTC",
+      "name": "Creditcoin",
+      "id": "creditcoin-2"
     },
     {
       "symbol": "IRYS",
@@ -537,14 +537,14 @@
       "id": "siren-2"
     },
     {
-      "symbol": "FOGO",
-      "name": "Fogo",
-      "id": "fogo"
-    },
-    {
       "symbol": "SHFL",
       "name": "Shuffle",
       "id": "shuffle-2"
+    },
+    {
+      "symbol": "FOGO",
+      "name": "Fogo",
+      "id": "fogo"
     },
     {
       "symbol": "AIOZ",
@@ -567,11 +567,6 @@
       "id": "vicicoin"
     },
     {
-      "symbol": "AZTEC",
-      "name": "Aztec",
-      "id": "aztec"
-    },
-    {
       "symbol": "SWOP",
       "name": "Swop",
       "id": "swop-2"
@@ -580,6 +575,11 @@
       "symbol": "T",
       "name": "Threshold Network",
       "id": "threshold-network-token"
+    },
+    {
+      "symbol": "AZTEC",
+      "name": "Aztec",
+      "id": "aztec"
     },
     {
       "symbol": "PIEVERSE",
@@ -592,19 +592,14 @@
       "id": "four"
     },
     {
-      "symbol": "BRETT",
-      "name": "Brett",
-      "id": "based-brett"
+      "symbol": "CKB",
+      "name": "Nervos Network",
+      "id": "nervos-network"
     },
     {
       "symbol": "SUPER",
       "name": "SuperVerse",
       "id": "superfarm"
-    },
-    {
-      "symbol": "CKB",
-      "name": "Nervos Network",
-      "id": "nervos-network"
     },
     {
       "symbol": "XAUM",
@@ -615,6 +610,11 @@
       "symbol": "KSM",
       "name": "Kusama",
       "id": "kusama"
+    },
+    {
+      "symbol": "BRETT",
+      "name": "Brett",
+      "id": "based-brett"
     },
     {
       "symbol": "RON",
@@ -672,6 +672,11 @@
       "id": "soon-2"
     },
     {
+      "symbol": "LINEA",
+      "name": "Linea",
+      "id": "linea"
+    },
+    {
       "symbol": "TURBO",
       "name": "Turbo",
       "id": "turbo"
@@ -687,9 +692,9 @@
       "id": "gama-token"
     },
     {
-      "symbol": "LINEA",
-      "name": "Linea",
-      "id": "linea"
+      "symbol": "DEEP",
+      "name": "DeepBook",
+      "id": "deep"
     },
     {
       "symbol": "SAFE",
@@ -697,24 +702,19 @@
       "id": "safe"
     },
     {
-      "symbol": "AIC",
-      "name": "AI Companions",
-      "id": "ai-companions"
-    },
-    {
       "symbol": "Q",
       "name": "Quack AI",
       "id": "quack-ai"
     },
     {
+      "symbol": "AIC",
+      "name": "AI Companions",
+      "id": "ai-companions"
+    },
+    {
       "symbol": "DBR",
       "name": "deBridge",
       "id": "debridge"
-    },
-    {
-      "symbol": "DEEP",
-      "name": "DeepBook",
-      "id": "deep"
     },
     {
       "symbol": "DGB",
@@ -732,9 +732,9 @@
       "id": "cygnus-finance-global-usd"
     },
     {
-      "symbol": "OM",
-      "name": "MANTRA",
-      "id": "mantra-dao"
+      "symbol": "FLOW",
+      "name": "Flow",
+      "id": "flow"
     },
     {
       "symbol": "JUPUSD",
@@ -742,9 +742,9 @@
       "id": "jupusd"
     },
     {
-      "symbol": "FLOW",
-      "name": "Flow",
-      "id": "flow"
+      "symbol": "TEMPLE",
+      "name": "TempleDAO",
+      "id": "temple"
     },
     {
       "symbol": "ALEO",
@@ -752,9 +752,9 @@
       "id": "aleo"
     },
     {
-      "symbol": "TEMPLE",
-      "name": "TempleDAO",
-      "id": "temple"
+      "symbol": "OM",
+      "name": "MANTRA",
+      "id": "mantra-dao"
     },
     {
       "symbol": "USDO",
@@ -765,6 +765,11 @@
       "symbol": "BABYDOGE",
       "name": "Baby Doge Coin",
       "id": "baby-doge-coin"
+    },
+    {
+      "symbol": "COAI",
+      "name": "ChainOpera AI",
+      "id": "chainopera-ai"
     },
     {
       "symbol": "CYS",
@@ -782,19 +787,14 @@
       "id": "coinex-token"
     },
     {
-      "symbol": "TDCCP",
-      "name": "TDCCP",
-      "id": "tdccp"
-    },
-    {
-      "symbol": "COAI",
-      "name": "ChainOpera AI",
-      "id": "chainopera-ai"
-    },
-    {
       "symbol": "ALCH",
       "name": "Alchemist AI",
       "id": "alchemist-ai"
+    },
+    {
+      "symbol": "TDCCP",
+      "name": "TDCCP",
+      "id": "tdccp"
     },
     {
       "symbol": "ZETA",
@@ -817,19 +817,19 @@
       "id": "world-mobile-token"
     },
     {
-      "symbol": "NILA",
-      "name": "MindWaveDAO",
-      "id": "mindwavedao"
-    },
-    {
-      "symbol": "NXPC",
-      "name": "Nexpace",
-      "id": "nexpace"
-    },
-    {
       "symbol": "XPR",
       "name": "XPR Network",
       "id": "proton"
+    },
+    {
+      "symbol": "QUBIC",
+      "name": "Qubic",
+      "id": "qubic-network"
+    },
+    {
+      "symbol": "NILA",
+      "name": "MindWaveDAO",
+      "id": "mindwavedao"
     },
     {
       "symbol": "NMR",
@@ -837,19 +837,24 @@
       "id": "numeraire"
     },
     {
+      "symbol": "ME",
+      "name": "Magic Eden",
+      "id": "magic-eden"
+    },
+    {
       "symbol": "AXL",
       "name": "Axelar",
       "id": "axelar"
     },
     {
+      "symbol": "NXPC",
+      "name": "Nexpace",
+      "id": "nexpace"
+    },
+    {
       "symbol": "USDU",
       "name": "USDu",
       "id": "usdu"
-    },
-    {
-      "symbol": "QUBIC",
-      "name": "Qubic",
-      "id": "qubic-network"
     },
     {
       "symbol": "MOCA",
@@ -862,11 +867,6 @@
       "id": "onfa"
     },
     {
-      "symbol": "ME",
-      "name": "Magic Eden",
-      "id": "magic-eden"
-    },
-    {
       "symbol": "GMX",
       "name": "GMX",
       "id": "gmx"
@@ -877,9 +877,9 @@
       "id": "arkham"
     },
     {
-      "symbol": "HOT",
-      "name": "Holo",
-      "id": "holotoken"
+      "symbol": "MERL",
+      "name": "Merlin Chain",
+      "id": "merlin-chain"
     },
     {
       "symbol": "SC",
@@ -887,14 +887,14 @@
       "id": "siacoin"
     },
     {
+      "symbol": "HOT",
+      "name": "Holo",
+      "id": "holotoken"
+    },
+    {
       "symbol": "ELF",
       "name": "aelf",
       "id": "aelf"
-    },
-    {
-      "symbol": "METAL",
-      "name": "Metal Blockchain",
-      "id": "metal-blockchain"
     },
     {
       "symbol": "MOG",
@@ -902,19 +902,14 @@
       "id": "mog-coin"
     },
     {
-      "symbol": "MERL",
-      "name": "Merlin Chain",
-      "id": "merlin-chain"
-    },
-    {
       "symbol": "VVS",
       "name": "VVS Finance",
       "id": "vvs-finance"
     },
     {
-      "symbol": "ISLM",
-      "name": "Islamic Coin",
-      "id": "islamic-coin"
+      "symbol": "METAL",
+      "name": "Metal Blockchain",
+      "id": "metal-blockchain"
     },
     {
       "symbol": "RLP",
@@ -927,14 +922,14 @@
       "id": "unit-pump"
     },
     {
-      "symbol": "PROVE",
-      "name": "Succinct",
-      "id": "succinct"
-    },
-    {
       "symbol": "CONSCIOUS",
       "name": "Conscious Token",
       "id": "conscious-token"
+    },
+    {
+      "symbol": "PROVE",
+      "name": "Succinct",
+      "id": "succinct"
     },
     {
       "symbol": "NPC",
@@ -952,6 +947,11 @@
       "id": "space-and-time"
     },
     {
+      "symbol": "ISLM",
+      "name": "Islamic Coin",
+      "id": "islamic-coin"
+    },
+    {
       "symbol": "PCI",
       "name": "Paycoin",
       "id": "pay-coin"
@@ -967,11 +967,6 @@
       "id": "bc-token"
     },
     {
-      "symbol": "VRSC",
-      "name": "Verus",
-      "id": "verus-coin"
-    },
-    {
       "symbol": "XYO",
       "name": "XYO Network",
       "id": "xyo-network"
@@ -980,6 +975,11 @@
       "symbol": "VTHO",
       "name": "VeThor",
       "id": "vethor-token"
+    },
+    {
+      "symbol": "VRSC",
+      "name": "Verus",
+      "id": "verus-coin"
     },
     {
       "symbol": "KAVA",
@@ -1007,14 +1007,14 @@
       "id": "uchain-2"
     },
     {
-      "symbol": "BIRB",
-      "name": "Moonbirds",
-      "id": "moonbirds"
-    },
-    {
       "symbol": "DESO",
       "name": "Decentralized Social",
       "id": "deso"
+    },
+    {
+      "symbol": "BIRB",
+      "name": "Moonbirds",
+      "id": "moonbirds"
     },
     {
       "symbol": "VENOM",
@@ -1027,14 +1027,14 @@
       "id": "alphabet-class-a-ondo-tokenized-stock"
     },
     {
-      "symbol": "RED",
-      "name": "RedStone",
-      "id": "redstone-oracles"
-    },
-    {
       "symbol": "UAI",
       "name": "UnifAI Network",
       "id": "unifai-network"
+    },
+    {
+      "symbol": "RED",
+      "name": "RedStone",
+      "id": "redstone-oracles"
     },
     {
       "symbol": "BLUR",
@@ -1072,14 +1072,14 @@
       "id": "cat-in-a-dogs-world"
     },
     {
-      "symbol": "AEUR",
-      "name": "Anchored Coins AEUR",
-      "id": "anchored-coins-eur"
-    },
-    {
       "symbol": "USDON",
       "name": "Ondo U.S. Dollar Token",
       "id": "ondo-u-s-dollar-token"
+    },
+    {
+      "symbol": "AEUR",
+      "name": "Anchored Coins AEUR",
+      "id": "anchored-coins-eur"
     },
     {
       "symbol": "REQ",
@@ -1097,14 +1097,14 @@
       "id": "jelly-my-jelly"
     },
     {
-      "symbol": "EURI",
-      "name": "Eurite",
-      "id": "eurite"
-    },
-    {
       "symbol": "PLUME",
       "name": "Plume",
       "id": "plume"
+    },
+    {
+      "symbol": "EURI",
+      "name": "Eurite",
+      "id": "eurite"
     },
     {
       "symbol": "NIZA",
@@ -1112,9 +1112,9 @@
       "id": "niza-global-2"
     },
     {
-      "symbol": "ZIG",
-      "name": "ZIGChain",
-      "id": "zignaly"
+      "symbol": "ESPORTS",
+      "name": "Yooldo Games",
+      "id": "yooldo-games"
     },
     {
       "symbol": "LBT",
@@ -1122,29 +1122,14 @@
       "id": "law-blocks"
     },
     {
-      "symbol": "ESPORTS",
-      "name": "Yooldo Games",
-      "id": "yooldo-games"
-    },
-    {
       "symbol": "CUSDO",
       "name": "Compounding OpenDollar",
       "id": "compounding-open-dollar"
     },
     {
-      "symbol": "MOODENG",
-      "name": "Moo Deng",
-      "id": "moo-deng"
-    },
-    {
-      "symbol": "SPK",
-      "name": "Spark",
-      "id": "spark-2"
-    },
-    {
-      "symbol": "ELG",
-      "name": "Escoin",
-      "id": "escoin-token"
+      "symbol": "ZIG",
+      "name": "ZIGChain",
+      "id": "zignaly"
     },
     {
       "symbol": "TSLAX",
@@ -1152,9 +1137,14 @@
       "id": "tesla-xstock"
     },
     {
-      "symbol": "HSK",
-      "name": "HashKey Platform Token",
-      "id": "hashkey-ecopoints"
+      "symbol": "ELG",
+      "name": "Escoin",
+      "id": "escoin-token"
+    },
+    {
+      "symbol": "SPK",
+      "name": "Spark",
+      "id": "spark-2"
     },
     {
       "symbol": "DUSK",
@@ -1162,9 +1152,14 @@
       "id": "dusk-network"
     },
     {
-      "symbol": "GEOD",
-      "name": "Geodnet",
-      "id": "geodnet"
+      "symbol": "MOODENG",
+      "name": "Moo Deng",
+      "id": "moo-deng"
+    },
+    {
+      "symbol": "HSK",
+      "name": "HashKey Platform Token",
+      "id": "hashkey-ecopoints"
     },
     {
       "symbol": "XCH",
@@ -1172,14 +1167,19 @@
       "id": "chia"
     },
     {
-      "symbol": "AVNT",
-      "name": "Avantis",
-      "id": "avantis"
+      "symbol": "GEOD",
+      "name": "Geodnet",
+      "id": "geodnet"
     },
     {
       "symbol": "IOTX",
       "name": "IoTeX",
       "id": "iotex"
+    },
+    {
+      "symbol": "AVNT",
+      "name": "Avantis",
+      "id": "avantis"
     },
     {
       "symbol": "USDX",
@@ -1207,14 +1207,14 @@
       "id": "drift-protocol"
     },
     {
-      "symbol": "POPCAT",
-      "name": "Popcat",
-      "id": "popcat"
-    },
-    {
       "symbol": "CELO",
       "name": "Celo",
       "id": "celo"
+    },
+    {
+      "symbol": "POPCAT",
+      "name": "Popcat",
+      "id": "popcat"
     },
     {
       "symbol": "QUAI",
@@ -1242,14 +1242,14 @@
       "id": "alloy-tether"
     },
     {
-      "symbol": "PNUT",
-      "name": "Peanut the Squirrel",
-      "id": "peanut-the-squirrel"
-    },
-    {
       "symbol": "VANA",
       "name": "Vana",
       "id": "vana"
+    },
+    {
+      "symbol": "PNUT",
+      "name": "Peanut the Squirrel",
+      "id": "peanut-the-squirrel"
     },
     {
       "symbol": "WAVES",
@@ -1265,6 +1265,11 @@
       "symbol": "XVS",
       "name": "Venus",
       "id": "venus"
+    },
+    {
+      "symbol": "OMNI",
+      "name": "Omni Network [Old]",
+      "id": "omni-network"
     },
     {
       "symbol": "USD+",
