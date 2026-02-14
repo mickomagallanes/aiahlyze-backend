@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-14T04:46:47.522358",
+  "last_updated_utc": "2026-02-14T05:51:21.822244",
   "tickers": [
     {
       "symbol": "BTC",
@@ -202,14 +202,14 @@
       "id": "mantle"
     },
     {
-      "symbol": "BUIDL",
-      "name": "BlackRock USD Institutional Digital Liquidity Fund",
-      "id": "blackrock-usd-institutional-digital-liquidity-fund"
-    },
-    {
       "symbol": "AAVE",
       "name": "Aave",
       "id": "aave"
+    },
+    {
+      "symbol": "BUIDL",
+      "name": "BlackRock USD Institutional Digital Liquidity Fund",
+      "id": "blackrock-usd-institutional-digital-liquidity-fund"
     },
     {
       "symbol": "TAO",
@@ -247,29 +247,29 @@
       "id": "hashnote-usyc"
     },
     {
+      "symbol": "KMNO",
+      "name": "Kamino",
+      "id": "kamino"
+    },
+    {
       "symbol": "COW",
       "name": "CoW Protocol",
       "id": "cow-protocol"
     },
     {
-      "symbol": "ZEN",
-      "name": "Horizen",
-      "id": "zencash"
-    },
-    {
-      "symbol": "W",
-      "name": "Wormhole",
-      "id": "wormhole"
-    },
-    {
-      "symbol": "ATH",
-      "name": "Aethir",
-      "id": "aethir"
+      "symbol": "MELANIA",
+      "name": "Melania Meme",
+      "id": "melania-meme"
     },
     {
       "symbol": "COCO",
       "name": "coco",
       "id": "coco-2"
+    },
+    {
+      "symbol": "W",
+      "name": "Wormhole",
+      "id": "wormhole"
     },
     {
       "symbol": "REUSD",
@@ -287,9 +287,9 @@
       "id": "frax-usd"
     },
     {
-      "symbol": "MET",
-      "name": "Meteora",
-      "id": "meteora"
+      "symbol": "TFUEL",
+      "name": "Theta Fuel",
+      "id": "theta-fuel"
     },
     {
       "symbol": "CASH",
@@ -297,19 +297,9 @@
       "id": "cash-4"
     },
     {
-      "symbol": "TFUEL",
-      "name": "Theta Fuel",
-      "id": "theta-fuel"
-    },
-    {
-      "symbol": "SOSO",
-      "name": "SoSoValue",
-      "id": "sosovalue"
-    },
-    {
-      "symbol": "GAS",
-      "name": "Gas",
-      "id": "gas"
+      "symbol": "MET",
+      "name": "Meteora",
+      "id": "meteora"
     },
     {
       "symbol": "YFI",
@@ -317,14 +307,19 @@
       "id": "yearn-finance"
     },
     {
+      "symbol": "GAS",
+      "name": "Gas",
+      "id": "gas"
+    },
+    {
       "symbol": "TKX",
       "name": "Tokenize Xchange",
       "id": "tokenize-xchange"
     },
     {
-      "symbol": "CTC",
-      "name": "Creditcoin",
-      "id": "creditcoin-2"
+      "symbol": "SOSO",
+      "name": "SoSoValue",
+      "id": "sosovalue"
     },
     {
       "symbol": "AVUSD",
@@ -337,14 +332,14 @@
       "id": "securitize-tokenized-aaa-clo-fund"
     },
     {
-      "symbol": "QTUM",
-      "name": "Qtum",
-      "id": "qtum"
-    },
-    {
       "symbol": "XVG",
       "name": "Verge",
       "id": "verge"
+    },
+    {
+      "symbol": "QTUM",
+      "name": "Qtum",
+      "id": "qtum"
     },
     {
       "symbol": "EDU",
@@ -357,14 +352,9 @@
       "id": "mnee-usd-stablecoin"
     },
     {
-      "symbol": "CHEEMS",
-      "name": "Cheems Token",
-      "id": "cheems-token"
-    },
-    {
-      "symbol": "TOSHI",
-      "name": "Toshi",
-      "id": "toshi"
+      "symbol": "CTC",
+      "name": "Creditcoin",
+      "id": "creditcoin-2"
     },
     {
       "symbol": "USDZ",
@@ -377,9 +367,14 @@
       "id": "havven"
     },
     {
-      "symbol": "币安人生",
-      "name": "币安人生 (BinanceLife)",
-      "id": "bianrensheng"
+      "symbol": "TOSHI",
+      "name": "Toshi",
+      "id": "toshi"
+    },
+    {
+      "symbol": "CHEEMS",
+      "name": "Cheems Token",
+      "id": "cheems-token"
     },
     {
       "symbol": "RSR",
@@ -390,6 +385,11 @@
       "symbol": "PC0000023",
       "name": "Tradable Singapore Fintech SSL",
       "id": "tradable-singapore-fintech-ssl-2"
+    },
+    {
+      "symbol": "币安人生",
+      "name": "币安人生 (BinanceLife)",
+      "id": "bianrensheng"
     },
     {
       "symbol": "USDR",
@@ -417,6 +417,11 @@
       "id": "pleasing-gold"
     },
     {
+      "symbol": "SIREN",
+      "name": "Siren",
+      "id": "siren-2"
+    },
+    {
       "symbol": "ZORA",
       "name": "Zora",
       "id": "zora"
@@ -437,24 +442,19 @@
       "id": "akash-network"
     },
     {
-      "symbol": "CORE",
-      "name": "Core",
-      "id": "coredaoorg"
-    },
-    {
       "symbol": "ROSE",
       "name": "Oasis",
       "id": "oasis-network"
     },
     {
+      "symbol": "CORE",
+      "name": "Core",
+      "id": "coredaoorg"
+    },
+    {
       "symbol": "XDAI",
       "name": "XDAI",
       "id": "xdai"
-    },
-    {
-      "symbol": "BAN",
-      "name": "Comedian",
-      "id": "comedian"
     },
     {
       "symbol": "ZRX",
@@ -467,14 +467,14 @@
       "id": "grass"
     },
     {
+      "symbol": "BAN",
+      "name": "Comedian",
+      "id": "comedian"
+    },
+    {
       "symbol": "HOME",
       "name": "HOME",
       "id": "home"
-    },
-    {
-      "symbol": "SIREN",
-      "name": "Siren",
-      "id": "siren-2"
     },
     {
       "symbol": "USDA",
@@ -497,6 +497,11 @@
       "id": "dydx-chain"
     },
     {
+      "symbol": "LUX",
+      "name": "Luxxcoin",
+      "id": "luxxcoin"
+    },
+    {
       "symbol": "MINA",
       "name": "Mina Protocol",
       "id": "mina-protocol"
@@ -505,11 +510,6 @@
       "symbol": "PIEVERSE",
       "name": "Pieverse",
       "id": "pieverse"
-    },
-    {
-      "symbol": "LUX",
-      "name": "Luxxcoin",
-      "id": "luxxcoin"
     },
     {
       "symbol": "RAVE",
@@ -527,14 +527,14 @@
       "id": "jusd"
     },
     {
-      "symbol": "SHFL",
-      "name": "Shuffle",
-      "id": "shuffle-2"
-    },
-    {
       "symbol": "FOGO",
       "name": "Fogo",
       "id": "fogo"
+    },
+    {
+      "symbol": "SHFL",
+      "name": "Shuffle",
+      "id": "shuffle-2"
     },
     {
       "symbol": "AIOZ",
@@ -542,14 +542,19 @@
       "id": "aioz-network"
     },
     {
-      "symbol": "T",
-      "name": "Threshold Network",
-      "id": "threshold-network-token"
-    },
-    {
       "symbol": "MAG7.SSI",
       "name": "MAG7.ssi",
       "id": "mag7-ssi"
+    },
+    {
+      "symbol": "IRYS",
+      "name": "Irys",
+      "id": "irys"
+    },
+    {
+      "symbol": "T",
+      "name": "Threshold Network",
+      "id": "threshold-network-token"
     },
     {
       "symbol": "VCNT",
