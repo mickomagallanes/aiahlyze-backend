@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-14T02:36:39.075501",
+  "last_updated_utc": "2026-02-14T04:46:47.522358",
   "tickers": [
     {
       "symbol": "BTC",
@@ -87,6 +87,11 @@
       "id": "monero"
     },
     {
+      "symbol": "CC",
+      "name": "Canton",
+      "id": "canton-network"
+    },
+    {
       "symbol": "USDE",
       "name": "Ethena USDe",
       "id": "ethena-usde"
@@ -95,11 +100,6 @@
       "symbol": "LINK",
       "name": "Chainlink",
       "id": "chainlink"
-    },
-    {
-      "symbol": "CC",
-      "name": "Canton",
-      "id": "canton-network"
     },
     {
       "symbol": "XLM",
@@ -212,14 +212,14 @@
       "id": "aave"
     },
     {
-      "symbol": "ASTER",
-      "name": "Aster",
-      "id": "aster-2"
-    },
-    {
       "symbol": "TAO",
       "name": "Bittensor",
       "id": "bittensor"
+    },
+    {
+      "symbol": "ASTER",
+      "name": "Aster",
+      "id": "aster-2"
     },
     {
       "symbol": "USDF",
@@ -247,19 +247,14 @@
       "id": "hashnote-usyc"
     },
     {
-      "symbol": "ZEN",
-      "name": "Horizen",
-      "id": "zencash"
-    },
-    {
       "symbol": "COW",
       "name": "CoW Protocol",
       "id": "cow-protocol"
     },
     {
-      "symbol": "COCO",
-      "name": "coco",
-      "id": "coco-2"
+      "symbol": "ZEN",
+      "name": "Horizen",
+      "id": "zencash"
     },
     {
       "symbol": "W",
@@ -267,9 +262,14 @@
       "id": "wormhole"
     },
     {
-      "symbol": "UB",
-      "name": "Unibase",
-      "id": "unibase"
+      "symbol": "ATH",
+      "name": "Aethir",
+      "id": "aethir"
+    },
+    {
+      "symbol": "COCO",
+      "name": "coco",
+      "id": "coco-2"
     },
     {
       "symbol": "REUSD",
@@ -277,19 +277,14 @@
       "id": "re-protocol-reusd"
     },
     {
-      "symbol": "FRXUSD",
-      "name": "Frax USD",
-      "id": "frax-usd"
-    },
-    {
       "symbol": "DEXE",
       "name": "DeXe",
       "id": "dexe"
     },
     {
-      "symbol": "CASH",
-      "name": "CASH",
-      "id": "cash-4"
+      "symbol": "FRXUSD",
+      "name": "Frax USD",
+      "id": "frax-usd"
     },
     {
       "symbol": "MET",
@@ -297,14 +292,14 @@
       "id": "meteora"
     },
     {
+      "symbol": "CASH",
+      "name": "CASH",
+      "id": "cash-4"
+    },
+    {
       "symbol": "TFUEL",
       "name": "Theta Fuel",
       "id": "theta-fuel"
-    },
-    {
-      "symbol": "YFI",
-      "name": "yearn.finance",
-      "id": "yearn-finance"
     },
     {
       "symbol": "SOSO",
@@ -312,9 +307,14 @@
       "id": "sosovalue"
     },
     {
-      "symbol": "CTC",
-      "name": "Creditcoin",
-      "id": "creditcoin-2"
+      "symbol": "GAS",
+      "name": "Gas",
+      "id": "gas"
+    },
+    {
+      "symbol": "YFI",
+      "name": "yearn.finance",
+      "id": "yearn-finance"
     },
     {
       "symbol": "TKX",
@@ -322,19 +322,9 @@
       "id": "tokenize-xchange"
     },
     {
-      "symbol": "GAS",
-      "name": "Gas",
-      "id": "gas"
-    },
-    {
-      "symbol": "TOSHI",
-      "name": "Toshi",
-      "id": "toshi"
-    },
-    {
-      "symbol": "EDU",
-      "name": "Open Campus",
-      "id": "edu-coin"
+      "symbol": "CTC",
+      "name": "Creditcoin",
+      "id": "creditcoin-2"
     },
     {
       "symbol": "AVUSD",
@@ -357,9 +347,9 @@
       "id": "verge"
     },
     {
-      "symbol": "CHEEMS",
-      "name": "Cheems Token",
-      "id": "cheems-token"
+      "symbol": "EDU",
+      "name": "Open Campus",
+      "id": "edu-coin"
     },
     {
       "symbol": "MNEE",
@@ -367,14 +357,24 @@
       "id": "mnee-usd-stablecoin"
     },
     {
-      "symbol": "SNX",
-      "name": "Synthetix",
-      "id": "havven"
+      "symbol": "CHEEMS",
+      "name": "Cheems Token",
+      "id": "cheems-token"
+    },
+    {
+      "symbol": "TOSHI",
+      "name": "Toshi",
+      "id": "toshi"
     },
     {
       "symbol": "USDZ",
       "name": "Anzen USDz",
       "id": "anzen-usdz"
+    },
+    {
+      "symbol": "SNX",
+      "name": "Synthetix",
+      "id": "havven"
     },
     {
       "symbol": "币安人生",
@@ -427,6 +427,11 @@
       "id": "onyc"
     },
     {
+      "symbol": "CCD",
+      "name": "Concordium",
+      "id": "concordium"
+    },
+    {
       "symbol": "AKT",
       "name": "Akash Network",
       "id": "akash-network"
@@ -437,24 +442,9 @@
       "id": "coredaoorg"
     },
     {
-      "symbol": "CCD",
-      "name": "Concordium",
-      "id": "concordium"
-    },
-    {
       "symbol": "ROSE",
       "name": "Oasis",
       "id": "oasis-network"
-    },
-    {
-      "symbol": "HOME",
-      "name": "HOME",
-      "id": "home"
-    },
-    {
-      "symbol": "BAN",
-      "name": "Comedian",
-      "id": "comedian"
     },
     {
       "symbol": "XDAI",
@@ -462,9 +452,9 @@
       "id": "xdai"
     },
     {
-      "symbol": "GRASS",
-      "name": "Grass",
-      "id": "grass"
+      "symbol": "BAN",
+      "name": "Comedian",
+      "id": "comedian"
     },
     {
       "symbol": "ZRX",
@@ -472,19 +462,29 @@
       "id": "0x"
     },
     {
+      "symbol": "GRASS",
+      "name": "Grass",
+      "id": "grass"
+    },
+    {
+      "symbol": "HOME",
+      "name": "HOME",
+      "id": "home"
+    },
+    {
       "symbol": "SIREN",
       "name": "Siren",
       "id": "siren-2"
     },
     {
-      "symbol": "KUB",
-      "name": "KUB Coin",
-      "id": "bitkub-coin"
-    },
-    {
       "symbol": "USDA",
       "name": "USDA",
       "id": "usda-3"
+    },
+    {
+      "symbol": "KUB",
+      "name": "KUB Coin",
+      "id": "bitkub-coin"
     },
     {
       "symbol": "ZIL",
@@ -497,14 +497,14 @@
       "id": "dydx-chain"
     },
     {
-      "symbol": "PIEVERSE",
-      "name": "Pieverse",
-      "id": "pieverse"
-    },
-    {
       "symbol": "MINA",
       "name": "Mina Protocol",
       "id": "mina-protocol"
+    },
+    {
+      "symbol": "PIEVERSE",
+      "name": "Pieverse",
+      "id": "pieverse"
     },
     {
       "symbol": "LUX",
@@ -537,11 +537,6 @@
       "id": "fogo"
     },
     {
-      "symbol": "BNKR",
-      "name": "BankrCoin",
-      "id": "bankercoin-2"
-    },
-    {
       "symbol": "AIOZ",
       "name": "AIOZ Network",
       "id": "aioz-network"
@@ -552,19 +547,14 @@
       "id": "threshold-network-token"
     },
     {
-      "symbol": "VCNT",
-      "name": "ViciCoin",
-      "id": "vicicoin"
-    },
-    {
       "symbol": "MAG7.SSI",
       "name": "MAG7.ssi",
       "id": "mag7-ssi"
     },
     {
-      "symbol": "ARC",
-      "name": "AI Rig Complex",
-      "id": "ai-rig-complex"
+      "symbol": "VCNT",
+      "name": "ViciCoin",
+      "id": "vicicoin"
     },
     {
       "symbol": "SWOP",
