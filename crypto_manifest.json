@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-14T19:30:22.092649",
+  "last_updated_utc": "2026-02-14T20:34:23.535395",
   "tickers": [
     {
       "symbol": "BTC",
@@ -82,14 +82,14 @@
       "id": "hyperliquid"
     },
     {
-      "symbol": "LINK",
-      "name": "Chainlink",
-      "id": "chainlink"
-    },
-    {
       "symbol": "XMR",
       "name": "Monero",
       "id": "monero"
+    },
+    {
+      "symbol": "LINK",
+      "name": "Chainlink",
+      "id": "chainlink"
     },
     {
       "symbol": "USDE",
@@ -232,14 +232,14 @@
       "id": "falcon-finance"
     },
     {
-      "symbol": "BGB",
-      "name": "Bitget Token",
-      "id": "bitget-token"
-    },
-    {
       "symbol": "OKB",
       "name": "OKB",
       "id": "okb"
+    },
+    {
+      "symbol": "BGB",
+      "name": "Bitget Token",
+      "id": "bitget-token"
     },
     {
       "symbol": "PI",
@@ -247,9 +247,19 @@
       "id": "pi-network"
     },
     {
+      "symbol": "SKY",
+      "name": "Sky",
+      "id": "sky"
+    },
+    {
       "symbol": "USYC",
       "name": "Circle USYC",
       "id": "hashnote-usyc"
+    },
+    {
+      "symbol": "W",
+      "name": "Wormhole",
+      "id": "wormhole"
     },
     {
       "symbol": "UB",
@@ -257,9 +267,9 @@
       "id": "unibase"
     },
     {
-      "symbol": "ZEN",
-      "name": "Horizen",
-      "id": "zencash"
+      "symbol": "ICNT",
+      "name": "Impossible Cloud Network Token",
+      "id": "impossible-cloud-network-token"
     },
     {
       "symbol": "ATH",
@@ -267,14 +277,14 @@
       "id": "aethir"
     },
     {
-      "symbol": "COCO",
-      "name": "coco",
-      "id": "coco-2"
-    },
-    {
       "symbol": "MET",
       "name": "Meteora",
       "id": "meteora"
+    },
+    {
+      "symbol": "COCO",
+      "name": "coco",
+      "id": "coco-2"
     },
     {
       "symbol": "TFUEL",
@@ -282,9 +292,9 @@
       "id": "theta-fuel"
     },
     {
-      "symbol": "REUSD",
-      "name": "Re Protocol reUSD",
-      "id": "re-protocol-reusd"
+      "symbol": "DEXE",
+      "name": "DeXe",
+      "id": "dexe"
     },
     {
       "symbol": "GAS",
@@ -292,9 +302,9 @@
       "id": "gas"
     },
     {
-      "symbol": "ICNT",
-      "name": "Impossible Cloud Network Token",
-      "id": "impossible-cloud-network-token"
+      "symbol": "REUSD",
+      "name": "Re Protocol reUSD",
+      "id": "re-protocol-reusd"
     },
     {
       "symbol": "FRXUSD",
@@ -302,14 +312,9 @@
       "id": "frax-usd"
     },
     {
-      "symbol": "DEXE",
-      "name": "DeXe",
-      "id": "dexe"
-    },
-    {
-      "symbol": "SIREN",
-      "name": "Siren",
-      "id": "siren-2"
+      "symbol": "币安人生",
+      "name": "币安人生 (BinanceLife)",
+      "id": "bianrensheng"
     },
     {
       "symbol": "CASH",
@@ -317,19 +322,9 @@
       "id": "cash-4"
     },
     {
-      "symbol": "币安人生",
-      "name": "币安人生 (BinanceLife)",
-      "id": "bianrensheng"
-    },
-    {
       "symbol": "TKX",
       "name": "Tokenize Xchange",
       "id": "tokenize-xchange"
-    },
-    {
-      "symbol": "QTUM",
-      "name": "Qtum",
-      "id": "qtum"
     },
     {
       "symbol": "SOSO",
@@ -337,9 +332,19 @@
       "id": "sosovalue"
     },
     {
+      "symbol": "SIREN",
+      "name": "Siren",
+      "id": "siren-2"
+    },
+    {
       "symbol": "EDU",
       "name": "Open Campus",
       "id": "edu-coin"
+    },
+    {
+      "symbol": "QTUM",
+      "name": "Qtum",
+      "id": "qtum"
     },
     {
       "symbol": "XVG",
@@ -350,11 +355,6 @@
       "symbol": "CHEEMS",
       "name": "Cheems Token",
       "id": "cheems-token"
-    },
-    {
-      "symbol": "TOSHI",
-      "name": "Toshi",
-      "id": "toshi"
     },
     {
       "symbol": "SNX",
@@ -377,6 +377,11 @@
       "id": "reserve-rights-token"
     },
     {
+      "symbol": "TOSHI",
+      "name": "Toshi",
+      "id": "toshi"
+    },
+    {
       "symbol": "MNEE",
       "name": "MNEE USD Stablecoin",
       "id": "mnee-usd-stablecoin"
@@ -387,24 +392,24 @@
       "id": "anzen-usdz"
     },
     {
-      "symbol": "RVN",
-      "name": "Ravencoin",
-      "id": "ravencoin"
-    },
-    {
       "symbol": "YFI",
       "name": "yearn.finance",
       "id": "yearn-finance"
     },
     {
+      "symbol": "CCD",
+      "name": "Concordium",
+      "id": "concordium"
+    },
+    {
+      "symbol": "RVN",
+      "name": "Ravencoin",
+      "id": "ravencoin"
+    },
+    {
       "symbol": "GRASS",
       "name": "Grass",
       "id": "grass"
-    },
-    {
-      "symbol": "ROSE",
-      "name": "Oasis",
-      "id": "oasis-network"
     },
     {
       "symbol": "DOG",
@@ -427,6 +432,16 @@
       "id": "nxm"
     },
     {
+      "symbol": "CTC",
+      "name": "Creditcoin",
+      "id": "creditcoin-2"
+    },
+    {
+      "symbol": "ROSE",
+      "name": "Oasis",
+      "id": "oasis-network"
+    },
+    {
       "symbol": "AKT",
       "name": "Akash Network",
       "id": "akash-network"
@@ -437,11 +452,6 @@
       "id": "zora"
     },
     {
-      "symbol": "CCD",
-      "name": "Concordium",
-      "id": "concordium"
-    },
-    {
       "symbol": "CORE",
       "name": "Core",
       "id": "coredaoorg"
@@ -450,11 +460,6 @@
       "symbol": "ZRX",
       "name": "0x Protocol",
       "id": "0x"
-    },
-    {
-      "symbol": "CTC",
-      "name": "Creditcoin",
-      "id": "creditcoin-2"
     },
     {
       "symbol": "PGOLD",
@@ -487,11 +492,6 @@
       "id": "comedian"
     },
     {
-      "symbol": "ZIL",
-      "name": "Zilliqa",
-      "id": "zilliqa"
-    },
-    {
       "symbol": "KUB",
       "name": "KUB Coin",
       "id": "bitkub-coin"
@@ -502,24 +502,14 @@
       "id": "usda-3"
     },
     {
+      "symbol": "ZIL",
+      "name": "Zilliqa",
+      "id": "zilliqa"
+    },
+    {
       "symbol": "LUX",
       "name": "Luxxcoin",
       "id": "luxxcoin"
-    },
-    {
-      "symbol": "WHITEWHALE",
-      "name": "The White Whale",
-      "id": "the-white-whale"
-    },
-    {
-      "symbol": "MINA",
-      "name": "Mina Protocol",
-      "id": "mina-protocol"
-    },
-    {
-      "symbol": "AIOZ",
-      "name": "AIOZ Network",
-      "id": "aioz-network"
     },
     {
       "symbol": "RAVE",
@@ -527,14 +517,19 @@
       "id": "ravedao"
     },
     {
-      "symbol": "IRYS",
-      "name": "Irys",
-      "id": "irys"
+      "symbol": "AIOZ",
+      "name": "AIOZ Network",
+      "id": "aioz-network"
     },
     {
-      "symbol": "KSM",
-      "name": "Kusama",
-      "id": "kusama"
+      "symbol": "MINA",
+      "name": "Mina Protocol",
+      "id": "mina-protocol"
+    },
+    {
+      "symbol": "MAG7.SSI",
+      "name": "MAG7.ssi",
+      "id": "mag7-ssi"
     },
     {
       "symbol": "FOGO",
@@ -542,14 +537,24 @@
       "id": "fogo"
     },
     {
+      "symbol": "KSM",
+      "name": "Kusama",
+      "id": "kusama"
+    },
+    {
       "symbol": "FORM",
       "name": "Four",
       "id": "four"
     },
     {
-      "symbol": "MAG7.SSI",
-      "name": "MAG7.ssi",
-      "id": "mag7-ssi"
+      "symbol": "IRYS",
+      "name": "Irys",
+      "id": "irys"
+    },
+    {
+      "symbol": "WHITEWHALE",
+      "name": "The White Whale",
+      "id": "the-white-whale"
     },
     {
       "symbol": "INI",
@@ -572,14 +577,14 @@
       "id": "pieverse"
     },
     {
-      "symbol": "T",
-      "name": "Threshold Network",
-      "id": "threshold-network-token"
-    },
-    {
       "symbol": "SAFE",
       "name": "Safe",
       "id": "safe"
+    },
+    {
+      "symbol": "T",
+      "name": "Threshold Network",
+      "id": "threshold-network-token"
     },
     {
       "symbol": "SUPER",
@@ -587,14 +592,14 @@
       "id": "superfarm"
     },
     {
-      "symbol": "BRETT",
-      "name": "Brett",
-      "id": "based-brett"
-    },
-    {
       "symbol": "CKB",
       "name": "Nervos Network",
       "id": "nervos-network"
+    },
+    {
+      "symbol": "BRETT",
+      "name": "Brett",
+      "id": "based-brett"
     },
     {
       "symbol": "VCNT",
@@ -605,6 +610,11 @@
       "symbol": "SN64",
       "name": "Chutes",
       "id": "chutes"
+    },
+    {
+      "symbol": "LINEA",
+      "name": "Linea",
+      "id": "linea"
     },
     {
       "symbol": "SWOP",
