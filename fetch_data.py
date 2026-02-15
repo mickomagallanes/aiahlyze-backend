@@ -71,8 +71,25 @@ def save_json(data, filename):
         json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"✅ Successfully saved {len(data.get('prices', data.get('tickers', [])))} items to {filename}")
 
+
+def fetch_logo_url(symbol):
+    """
+    Try to get a logo URL for a ticker via yfinance website field.
+    Returns a Clearbit logo URL if a website is found, otherwise None.
+    """
+    try:
+        info = yf.Ticker(symbol).info or {}
+        website = info.get('website') or ''
+        if website:
+            domain = website.replace('https://', '').replace('http://', '').split('/')[0]
+            if domain:
+                return f"https://logo.clearbit.com/{domain}"
+    except Exception:
+        pass
+    return None
+
 def get_top_500_stocks_manifest():
-    """Returns a deterministic Top 500 stock manifest (S&P 500)."""
+    """Returns a deterministic Top 500 stock manifest (S&P 500) with logo URLs."""
     print("🌍 Building Top 500 stocks manifest (S&P 500)...")
     manifest = []
     try:
@@ -90,6 +107,7 @@ def get_top_500_stocks_manifest():
         tables = pd.read_html(StringIO(response.text))
         table = tables[0]
         
+        symbols = []
         for _, row in table.iterrows():
             symbol = str(row.get('Symbol', '')).strip()
             name = str(row.get('Security', symbol)).strip()
@@ -97,7 +115,21 @@ def get_top_500_stocks_manifest():
                 continue
             # Yahoo uses '-' instead of '.' for some US tickers (e.g., BRK.B -> BRK-B)
             yahoo_symbol = symbol.replace('.', '-')
-            manifest.append({"symbol": yahoo_symbol, "name": name})
+            symbols.append({"symbol": yahoo_symbol, "name": name})
+        
+        # Fetch logo URLs in bulk
+        total = len(symbols)
+        print(f"  → Fetching logo URLs for {total} stocks...")
+        for idx, item in enumerate(symbols):
+            logo_url = fetch_logo_url(item['symbol'])
+            manifest.append({
+                "symbol": item['symbol'],
+                "name": item['name'],
+                "logo_url": logo_url
+            })
+            if (idx + 1) % 50 == 0:
+                print(f"    ✓ Logos: {idx + 1}/{total}")
+        
         print(f"📊 Total top stocks manifest: {len(manifest)}")
     except Exception as e:
         print(f"✗ Error building top stocks manifest: {e}")
@@ -199,17 +231,20 @@ def fetch_crypto_data():
             
             for coin in data:
                 symbol = coin['symbol'].upper()
+                logo_url = coin.get('image')  # CoinGecko provides logo
                 manifest.append({
                     "symbol": symbol,
                     "name": coin['name'],
-                    "id": coin['id']  # CoinGecko ID for future API calls
+                    "id": coin['id'],  # CoinGecko ID for future API calls
+                    "logo_url": logo_url
                 })
                 prices.append({
                     "symbol": symbol,
                     "price": coin['current_price'],
                     "change_24h_percent": round(coin.get('price_change_percentage_24h', 0), 2),
                     "market_cap": coin.get('market_cap', 0),
-                    "volume_24h": coin.get('total_volume', 0)
+                    "volume_24h": coin.get('total_volume', 0),
+                    "logo_url": logo_url
                 })
             
             print(f"    ✓ Added {len(data)} coins")
@@ -224,8 +259,10 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
     """
     Fetches prices from Yahoo for a given manifest of tickers.
     Uses smaller batches and better error handling.
+    Carries logo_url from manifest into price entries.
     """
     tickers_list = [item['symbol'] for item in manifest]
+    logo_lookup = {item['symbol']: item.get('logo_url') for item in manifest}
     print(f"\n📈 Fetching prices for {len(tickers_list)} assets ({filename})...")
     prices = []
     failed = []
@@ -276,7 +313,8 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                         prices.append({
                             "symbol": symbol,
                             "price": close_price,
-                            "change_percent": fallback_change if fallback_change is not None else 0.0
+                            "change_percent": fallback_change if fallback_change is not None else 0.0,
+                            "logo_url": logo_lookup.get(symbol)
                         })
                         continue
 
@@ -290,7 +328,8 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                     prices.append({
                         "symbol": symbol,
                         "price": round(close_price, 2),
-                        "change_percent": round(float(change_percent), 2)
+                        "change_percent": round(float(change_percent), 2),
+                        "logo_url": logo_lookup.get(symbol)
                     })
                     
                 except Exception as e:
@@ -328,7 +367,13 @@ def main():
     
     # 3. Add Philippine Stocks (optional local coverage)
     print("\n🇵🇭 Adding Philippine Stocks...")
-    all_stocks_manifest = top_500_manifest + PH_STOCKS
+    print("  → Fetching logo URLs for PH stocks...")
+    ph_with_logos = []
+    for stock in PH_STOCKS:
+        logo_url = fetch_logo_url(stock['symbol'])
+        ph_with_logos.append({**stock, "logo_url": logo_url})
+    
+    all_stocks_manifest = top_500_manifest + ph_with_logos
     print(f"  ✓ Added {len(PH_STOCKS)} PH stocks")
     print(f"📊 Total stocks manifest: {len(all_stocks_manifest)}")
     
@@ -343,22 +388,34 @@ def main():
     # 5. Indices only
     print("\n" + "=" * 60)
     print("📊 Processing Indices...")
+    print("  → Fetching logo URLs for indices...")
+    indices_with_logos = []
+    for item in INDICES:
+        logo_url = fetch_logo_url(item['symbol'])
+        indices_with_logos.append({**item, "logo_url": logo_url})
+    
     save_json({
         "last_updated_utc": datetime.utcnow().isoformat(),
-        "tickers": INDICES
+        "tickers": indices_with_logos
     }, "indices_commodities_manifest.json")
     
-    fetch_yahoo_prices(INDICES, "indices_commodities_prices.json", batch_size=6)
+    fetch_yahoo_prices(indices_with_logos, "indices_commodities_prices.json", batch_size=6)
     
     # 6. Metals & Commodities
     print("\n" + "=" * 60)
     print("🥇 Processing Metals & Commodities...")
+    print("  → Fetching logo URLs for metals & commodities...")
+    metals_with_logos = []
+    for item in METALS_COMMODITIES:
+        logo_url = fetch_logo_url(item['symbol'])
+        metals_with_logos.append({**item, "logo_url": logo_url})
+    
     save_json({
         "last_updated_utc": datetime.utcnow().isoformat(),
-        "tickers": METALS_COMMODITIES
+        "tickers": metals_with_logos
     }, "metals_indices_manifest.json")
     
-    fetch_yahoo_prices(METALS_COMMODITIES, "metals_indices_prices.json", batch_size=8)
+    fetch_yahoo_prices(metals_with_logos, "metals_indices_prices.json", batch_size=8)
     
     print("\n" + "=" * 60)
     print("✅ COMPLETE")
