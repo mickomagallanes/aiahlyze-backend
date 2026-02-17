@@ -75,15 +75,34 @@ def save_json(data, filename):
 def fetch_logo_url(symbol):
     """
     Try to get a logo URL for a ticker via yfinance website field.
-    Returns a Clearbit logo URL if a website is found, otherwise None.
+    Uses multiple fallback services: Google Favicons, Unavatar, DuckDuckGo.
+    Returns the first working logo URL, or None if all fail.
     """
     try:
         info = yf.Ticker(symbol).info or {}
         website = info.get('website') or ''
-        if website:
-            domain = website.replace('https://', '').replace('http://', '').split('/')[0]
-            if domain:
-                return f"https://logo.clearbit.com/{domain}"
+        if not website:
+            return None
+            
+        # Extract domain from website URL
+        domain = website.replace('https://', '').replace('http://', '').split('/')[0]
+        if not domain:
+            return None
+        
+        # Try multiple logo services in order of quality
+        # 1. Google Favicons (most reliable, good quality)
+        google_logo = f"https://www.google.com/s2/favicons?sz=128&domain={domain}"
+        
+        # 2. Unavatar (good fallback)
+        unavatar_logo = f"https://unavatar.io/{domain}"
+        
+        # 3. DuckDuckGo (lower quality but reliable)
+        ddg_logo = f"https://icons.duckduckgo.com/ip3/{domain}.ico"
+        
+        # Return Google Favicons by default (most reliable)
+        # The frontend can try fallbacks if needed
+        return google_logo
+        
     except Exception:
         pass
     return None
