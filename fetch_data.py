@@ -54,15 +54,16 @@ INDICES = [
 ]
 
 # Metals and Commodities (separate tracking)
+# Logo URLs point to uploaded images on GitHub
 METALS_COMMODITIES = [
-    {"symbol": "GC=F", "name": "Gold"},
-    {"symbol": "SI=F", "name": "Silver"},
-    {"symbol": "CL=F", "name": "Crude Oil (WTI)"},
-    {"symbol": "BZ=F", "name": "Brent Crude Oil"},
-    {"symbol": "NG=F", "name": "Natural Gas"},
-    {"symbol": "HG=F", "name": "Copper"},
-    {"symbol": "PL=F", "name": "Platinum"},
-    {"symbol": "PA=F", "name": "Palladium"}
+    {"symbol": "GC=F", "name": "Gold", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/gold.png"},
+    {"symbol": "SI=F", "name": "Silver", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/silver.png"},
+    {"symbol": "CL=F", "name": "Crude Oil (WTI)", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/oil.png"},
+    {"symbol": "BZ=F", "name": "Brent Crude Oil", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/brent-oil.png"},
+    {"symbol": "NG=F", "name": "Natural Gas", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/natural-gas.png"},
+    {"symbol": "HG=F", "name": "Copper", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/copper.png"},
+    {"symbol": "PL=F", "name": "Platinum", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/platinum.png"},
+    {"symbol": "PA=F", "name": "Palladium", "logo_url": "https://raw.githubusercontent.com/mickomagallanes/aiahlyze-backend/refs/heads/main/palladium.png"}
 ]
 
 def save_json(data, filename):
@@ -423,18 +424,14 @@ def main():
     # 6. Metals & Commodities
     print("\n" + "=" * 60)
     print("🥇 Processing Metals & Commodities...")
-    print("  → Fetching logo URLs for metals & commodities...")
-    metals_with_logos = []
-    for item in METALS_COMMODITIES:
-        logo_url = fetch_logo_url(item['symbol'])
-        metals_with_logos.append({**item, "logo_url": logo_url})
+    # Metals already have logo URLs defined in the constant (from GitHub)
     
     save_json({
         "last_updated_utc": datetime.utcnow().isoformat(),
-        "tickers": metals_with_logos
+        "tickers": METALS_COMMODITIES
     }, "metals_indices_manifest.json")
     
-    fetch_yahoo_prices(metals_with_logos, "metals_indices_prices.json", batch_size=8)
+    fetch_yahoo_prices(METALS_COMMODITIES, "metals_indices_prices.json", batch_size=8)
     
     print("\n" + "=" * 60)
     print("✅ COMPLETE")
