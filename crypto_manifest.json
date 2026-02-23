@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-02-23T22:50:27.639469",
+  "last_updated_utc": "2026-02-23T23:38:46.503063",
   "tickers": [
     {
       "symbol": "BTC",
@@ -158,16 +158,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/31212/large/PYUSD_Token_Logo_2x.png?1765987788"
     },
     {
-      "symbol": "LTC",
-      "name": "Litecoin",
-      "id": "litecoin",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/2/large/litecoin.png?1696501400"
-    },
-    {
       "symbol": "ZEC",
       "name": "Zcash",
       "id": "zcash",
       "logo_url": "https://coin-images.coingecko.com/coins/images/486/large/circle-zcash-color.png?1696501740"
+    },
+    {
+      "symbol": "LTC",
+      "name": "Litecoin",
+      "id": "litecoin",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/2/large/litecoin.png?1696501400"
     },
     {
       "symbol": "AVAX",
@@ -290,22 +290,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/51054/large/Hashnote_SDYC_200x200.png?1730370965"
     },
     {
-      "symbol": "QRL",
-      "name": "Quantum Resistant Ledger",
-      "id": "quantum-resistant-ledger",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/700/large/qrl-logo.png?1763796842"
-    },
-    {
       "symbol": "MF-ONE",
       "name": "Midas mF-ONE",
       "id": "midas-mf-one",
       "logo_url": "https://coin-images.coingecko.com/coins/images/66975/large/mfone-logo.png?1751307469"
     },
     {
-      "symbol": "AWE",
-      "name": "AWE Network",
-      "id": "stp-network",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/8713/large/awe-network.jpg?1747816016"
+      "symbol": "POWER",
+      "name": "Power Protocol",
+      "id": "power-protocol",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/70944/large/power.png?1764744522"
     },
     {
       "symbol": "ONYC",
@@ -314,10 +308,22 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/67072/large/ONyc_Logo_PNG_200px.png?1768587229"
     },
     {
-      "symbol": "POWER",
-      "name": "Power Protocol",
-      "id": "power-protocol",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/70944/large/power.png?1764744522"
+      "symbol": "AWE",
+      "name": "AWE Network",
+      "id": "stp-network",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/8713/large/awe-network.jpg?1747816016"
+    },
+    {
+      "symbol": "GRX",
+      "name": "GRX Chain",
+      "id": "grx-chain",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/71011/large/Untitled_design_%283%29.png?1765178472"
+    },
+    {
+      "symbol": "SKR",
+      "name": "Seeker",
+      "id": "seeker",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/70974/large/seeker-logo.jpg?1764922774"
     },
     {
       "symbol": "STAC",
@@ -330,12 +336,6 @@
       "name": "Fogo",
       "id": "fogo",
       "logo_url": "https://coin-images.coingecko.com/coins/images/68100/large/fogo_AppIcon.png?1767721208"
-    },
-    {
-      "symbol": "GRX",
-      "name": "GRX Chain",
-      "id": "grx-chain",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/71011/large/Untitled_design_%283%29.png?1765178472"
     },
     {
       "symbol": "HOME",
@@ -368,16 +368,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/55484/large/ICNT_token_%281%29_%281%29.png?1751614146"
     },
     {
-      "symbol": "PGOLD",
-      "name": "Pleasing Gold",
-      "id": "pleasing-gold",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/70395/large/%E9%BB%84%E9%87%91.png?1761795141"
-    },
-    {
       "symbol": "MNEE",
       "name": "MNEE USD Stablecoin",
       "id": "mnee-usd-stablecoin",
       "logo_url": "https://coin-images.coingecko.com/coins/images/39459/large/MNEE_logo_no_BG.png?1725666891"
+    },
+    {
+      "symbol": "PGOLD",
+      "name": "Pleasing Gold",
+      "id": "pleasing-gold",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/70395/large/%E9%BB%84%E9%87%91.png?1761795141"
     },
     {
       "symbol": "PC0000023",
@@ -392,12 +392,6 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/35087/large/W_Token_%283%29.png?1758122686"
     },
     {
-      "symbol": "BEAM",
-      "name": "Beam",
-      "id": "beam-2",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/32417/large/cgicon.png?1747892021"
-    },
-    {
       "symbol": "USDR",
       "name": "Ring USD",
       "id": "ring-usd",
@@ -408,6 +402,18 @@
       "name": "Open Campus",
       "id": "edu-coin",
       "logo_url": "https://coin-images.coingecko.com/coins/images/29948/large/EDU_Logo.png?1696528874"
+    },
+    {
+      "symbol": "BEAM",
+      "name": "Beam",
+      "id": "beam-2",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/32417/large/cgicon.png?1747892021"
+    },
+    {
+      "symbol": "USR",
+      "name": "Resolv USR",
+      "id": "resolv-usr",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/40008/large/USR_LOGO.png?1725222638"
     },
     {
       "symbol": "TFUEL",
@@ -434,16 +440,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/691/large/Horizen2.0-logo_icon-on-yellow_%281%29.png?1751696763"
     },
     {
-      "symbol": "SOSO",
-      "name": "SoSoValue",
-      "id": "sosovalue",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/53919/large/soso.jpg?1737717378"
-    },
-    {
       "symbol": "YFI",
       "name": "yearn.finance",
       "id": "yearn-finance",
       "logo_url": "https://coin-images.coingecko.com/coins/images/11849/large/yearn.jpg?1696511720"
+    },
+    {
+      "symbol": "SOSO",
+      "name": "SoSoValue",
+      "id": "sosovalue",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/53919/large/soso.jpg?1737717378"
     },
     {
       "symbol": "KMNO",
@@ -464,12 +470,6 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/684/large/Qtum_Logo_blue_CG.png?1696501874"
     },
     {
-      "symbol": "ROSE",
-      "name": "Oasis",
-      "id": "oasis-network",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/13162/large/200x200_%28Rounded%29.png?1743579893"
-    },
-    {
       "symbol": "XDAI",
       "name": "XDAI",
       "id": "xdai",
@@ -482,6 +482,12 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/38039/large/usdz-image-200x200.png?1716334412"
     },
     {
+      "symbol": "ROSE",
+      "name": "Oasis",
+      "id": "oasis-network",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/13162/large/200x200_%28Rounded%29.png?1743579893"
+    },
+    {
       "symbol": "MET",
       "name": "Meteora",
       "id": "meteora",
@@ -492,12 +498,6 @@
       "name": "Ravencoin",
       "id": "ravencoin",
       "logo_url": "https://coin-images.coingecko.com/coins/images/3412/large/ravencoin.png?1696504108"
-    },
-    {
-      "symbol": "USR",
-      "name": "Resolv USR",
-      "id": "resolv-usr",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/40008/large/USR_LOGO.png?1725222638"
     },
     {
       "symbol": "NXM",
@@ -536,28 +536,28 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/69108/large/unibase.png?1757501820"
     },
     {
-      "symbol": "ATH",
-      "name": "Aethir",
-      "id": "aethir",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/36179/large/logogram_circle_dark_green_vb_green_%281%29.png?1718232706"
-    },
-    {
       "symbol": "LUX",
       "name": "Luxxcoin",
       "id": "luxxcoin",
       "logo_url": "https://coin-images.coingecko.com/coins/images/70524/large/200X200_RED.png?1762411816"
     },
     {
-      "symbol": "AKT",
-      "name": "Akash Network",
-      "id": "akash-network",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/12785/large/akash-logo.png?1696512580"
+      "symbol": "ATH",
+      "name": "Aethir",
+      "id": "aethir",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/36179/large/logogram_circle_dark_green_vb_green_%281%29.png?1718232706"
     },
     {
       "symbol": "ZORA",
       "name": "Zora",
       "id": "zora",
       "logo_url": "https://coin-images.coingecko.com/coins/images/54693/large/zora.jpg?1741094751"
+    },
+    {
+      "symbol": "AKT",
+      "name": "Akash Network",
+      "id": "akash-network",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/12785/large/akash-logo.png?1696512580"
     },
     {
       "symbol": "KUB",
@@ -584,22 +584,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/67080/large/logo_200.png?1751699181"
     },
     {
-      "symbol": "TOSHI",
-      "name": "Toshi",
-      "id": "toshi",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/31126/large/Toshi_Logo_-_Circular.png?1721677476"
-    },
-    {
       "symbol": "CORE",
       "name": "Core",
       "id": "coredaoorg",
       "logo_url": "https://coin-images.coingecko.com/coins/images/28938/large/file_589.jpg?1701868471"
     },
     {
-      "symbol": "JUSD",
-      "name": "JUSD",
-      "id": "jusd",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/32302/large/200x200.png?1697186770"
+      "symbol": "TOSHI",
+      "name": "Toshi",
+      "id": "toshi",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/31126/large/Toshi_Logo_-_Circular.png?1721677476"
     },
     {
       "symbol": "PIEVERSE",
@@ -608,28 +602,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/68773/large/pieverse.png?1756546685"
     },
     {
+      "symbol": "JUSD",
+      "name": "JUSD",
+      "id": "jusd",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/32302/large/200x200.png?1697186770"
+    },
+    {
       "symbol": "SWOP",
       "name": "Swop",
       "id": "swop-2",
       "logo_url": "https://coin-images.coingecko.com/coins/images/66773/large/Group_1000007182_copy.png?1750487480"
-    },
-    {
-      "symbol": "SN64",
-      "name": "Chutes",
-      "id": "chutes",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/66308/large/chutes.jpg?1749181700"
-    },
-    {
-      "symbol": "KSM",
-      "name": "Kusama",
-      "id": "kusama",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/9568/large/m4zRhP5e_400x400.jpg?1696509648"
-    },
-    {
-      "symbol": "Q",
-      "name": "Quack AI",
-      "id": "quack-ai",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/68793/large/quack_ai.png?1756615808"
     },
     {
       "symbol": "VCNT",
@@ -638,22 +620,40 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/31305/large/ViciCoin_-_small.png?1696530124"
     },
     {
+      "symbol": "KSM",
+      "name": "Kusama",
+      "id": "kusama",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/9568/large/m4zRhP5e_400x400.jpg?1696509648"
+    },
+    {
+      "symbol": "SN64",
+      "name": "Chutes",
+      "id": "chutes",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/66308/large/chutes.jpg?1749181700"
+    },
+    {
+      "symbol": "Q",
+      "name": "Quack AI",
+      "id": "quack-ai",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/68793/large/quack_ai.png?1756615808"
+    },
+    {
       "symbol": "XAUM",
       "name": "Matrixdock Gold",
       "id": "matrixdock-gold",
       "logo_url": "https://coin-images.coingecko.com/coins/images/51962/large/xaum_200px_logo_1x.png?1733560735"
     },
     {
-      "symbol": "ZIL",
-      "name": "Zilliqa",
-      "id": "zilliqa",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/2687/large/Zilliqa-logo.png?1696503475"
-    },
-    {
       "symbol": "META",
       "name": "MetaDAO",
       "id": "meta-2-2",
       "logo_url": "https://coin-images.coingecko.com/coins/images/68320/large/META.png?1755335883"
+    },
+    {
+      "symbol": "ZIL",
+      "name": "Zilliqa",
+      "id": "zilliqa",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/2687/large/Zilliqa-logo.png?1696503475"
     },
     {
       "symbol": "GRASS",
@@ -668,16 +668,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/52962/large/mag7.png?1734863745"
     },
     {
-      "symbol": "AZTEC",
-      "name": "Aztec",
-      "id": "aztec",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/70681/large/aztec.png?1763091883"
-    },
-    {
       "symbol": "CTC",
       "name": "Creditcoin",
       "id": "creditcoin-2",
       "logo_url": "https://coin-images.coingecko.com/coins/images/10569/large/Creditcoin_Symbol_dark56.png?1737796066"
+    },
+    {
+      "symbol": "AZTEC",
+      "name": "Aztec",
+      "id": "aztec",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/70681/large/aztec.png?1763091883"
     },
     {
       "symbol": "CCD",
@@ -722,16 +722,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/63/large/digibyte.png?1696501454"
     },
     {
-      "symbol": "CGUSD",
-      "name": "Cygnus Finance Global USD",
-      "id": "cygnus-finance-global-usd",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/35628/large/cgUSD.png?1709291316"
-    },
-    {
       "symbol": "DBR",
       "name": "deBridge",
       "id": "debridge",
       "logo_url": "https://coin-images.coingecko.com/coins/images/38019/large/DBR_icon_Color.png?1724708885"
+    },
+    {
+      "symbol": "CGUSD",
+      "name": "Cygnus Finance Global USD",
+      "id": "cygnus-finance-global-usd",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/35628/large/cgUSD.png?1709291316"
     },
     {
       "symbol": "FEUSD",
@@ -764,12 +764,6 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/51727/large/rektcion_trans_200px.png?1731910587"
     },
     {
-      "symbol": "DYDX",
-      "name": "dYdX",
-      "id": "dydx-chain",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/32594/large/dydx.png?1698673495"
-    },
-    {
       "symbol": "ALEO",
       "name": "ALEO",
       "id": "aleo",
@@ -780,6 +774,12 @@
       "name": "Mina Protocol",
       "id": "mina-protocol",
       "logo_url": "https://coin-images.coingecko.com/coins/images/15628/large/JM4_vQ34_400x400.png?1696515261"
+    },
+    {
+      "symbol": "DYDX",
+      "name": "dYdX",
+      "id": "dydx-chain",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/32594/large/dydx.png?1698673495"
     },
     {
       "symbol": "MOVE",
@@ -800,16 +800,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/52133/large/AIFUN_%282%29.png?1732639482"
     },
     {
-      "symbol": "FLOW",
-      "name": "Flow",
-      "id": "flow",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/13446/large/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.png?1696513210"
-    },
-    {
       "symbol": "RAVE",
       "name": "RaveDAO",
       "id": "ravedao",
       "logo_url": "https://coin-images.coingecko.com/coins/images/70544/large/coin.jpeg?1762452940"
+    },
+    {
+      "symbol": "FLOW",
+      "name": "Flow",
+      "id": "flow",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/13446/large/5f6294c0c7a8cda55cb1c936_Flow_Wordmark.png?1696513210"
     },
     {
       "symbol": "T",
@@ -824,16 +824,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/27032/large/Artboard_1_copy_8circle-1.png?1696526084"
     },
     {
-      "symbol": "UCN",
-      "name": "UCHAIN",
-      "id": "uchain-2",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/68692/large/UCHAIN.png?1756280939"
-    },
-    {
       "symbol": "KAITO",
       "name": "KAITO",
       "id": "kaito",
       "logo_url": "https://coin-images.coingecko.com/coins/images/54411/large/Qm4DW488_400x400.jpg?1739552780"
+    },
+    {
+      "symbol": "UCN",
+      "name": "UCHAIN",
+      "id": "uchain-2",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/68692/large/UCHAIN.png?1756280939"
     },
     {
       "symbol": "CET",
@@ -842,16 +842,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/4817/large/coinex-token.png?1696505367"
     },
     {
-      "symbol": "SOON",
-      "name": "SOON",
-      "id": "soon-2",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/55124/large/red_2.PNG?1743843131"
-    },
-    {
       "symbol": "PUFF",
       "name": "Puff The Dragon",
       "id": "puff-the-dragon",
       "logo_url": "https://coin-images.coingecko.com/coins/images/35950/large/photo_2024-03-11_10.18.27.jpeg?1710240090"
+    },
+    {
+      "symbol": "SOON",
+      "name": "SOON",
+      "id": "soon-2",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/55124/large/red_2.PNG?1743843131"
     },
     {
       "symbol": "SUPER",
@@ -884,18 +884,6 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/756/large/nano.png?1696501910"
     },
     {
-      "symbol": "NXPC",
-      "name": "Nexpace",
-      "id": "nexpace",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/55703/large/wk63iOZz_400x400.png?1747126039"
-    },
-    {
-      "symbol": "TDCCP",
-      "name": "TDCCP",
-      "id": "tdccp",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/55581/large/tdccp-logo.jpg?1746787823"
-    },
-    {
       "symbol": "WMTX",
       "name": "World Mobile Token",
       "id": "world-mobile-token",
@@ -908,10 +896,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/67726/large/USDu_Icon_512x512.png?1770780851"
     },
     {
-      "symbol": "BABYDOGE",
-      "name": "Baby Doge Coin",
-      "id": "baby-doge-coin",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/16125/large/babydoge.jpg?1696515731"
+      "symbol": "NXPC",
+      "name": "Nexpace",
+      "id": "nexpace",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/55703/large/wk63iOZz_400x400.png?1747126039"
+    },
+    {
+      "symbol": "TDCCP",
+      "name": "TDCCP",
+      "id": "tdccp",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/55581/large/tdccp-logo.jpg?1746787823"
     },
     {
       "symbol": "LINEA",
@@ -920,16 +914,16 @@
       "logo_url": "https://coin-images.coingecko.com/coins/images/68507/large/linea-logo.jpeg?1756025484"
     },
     {
-      "symbol": "SXT",
-      "name": "Space and Time",
-      "id": "space-and-time",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/55424/large/sxt-token_circle.jpg?1745935919"
+      "symbol": "BABYDOGE",
+      "name": "Baby Doge Coin",
+      "id": "baby-doge-coin",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/16125/large/babydoge.jpg?1696515731"
     },
     {
-      "symbol": "ALCH",
-      "name": "Alchemist AI",
-      "id": "alchemist-ai",
-      "logo_url": "https://coin-images.coingecko.com/coins/images/52302/large/small-logo.png?1733053544"
+      "symbol": "ISLM",
+      "name": "Islamic Coin",
+      "id": "islamic-coin",
+      "logo_url": "https://coin-images.coingecko.com/coins/images/32284/large/66eade0c3f9fa1dbb50d7a37_Logomark__2.png?1728441108"
     },
     {
       "symbol": "USDO",
