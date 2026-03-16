@@ -201,32 +201,50 @@ def _finnhub_quote(symbol):
 
 
 def _fallback_quote(symbol):
-    """Try single-symbol fallback via yfinance.Ticker for better reliability."""
+    """Try single-symbol fallback via yfinance.Ticker for better reliability.
+    Returns (price, change_percent, change_7d_percent, change_30d_percent)."""
     try:
         t = yf.Ticker(symbol)
         fi = getattr(t, 'fast_info', None) or {}
         price = _safe_float(fi.get('lastPrice')) or _safe_float(fi.get('regularMarketPrice'))
         prev_close = _safe_float(fi.get('previousClose'))
 
-        if price is None:
-            hist = t.history(period='5d', interval='1d')
-            if hist is not None and not hist.empty:
-                close_series = hist.get('Close')
-                if close_series is not None and len(close_series) > 0:
+        # Get 1 month of history for 7d/30d calculations
+        hist = t.history(period='1mo', interval='1d')
+        change_7d = None
+        change_30d = None
+
+        if hist is not None and not hist.empty:
+            close_series = hist.get('Close')
+            if close_series is not None and len(close_series) > 0:
+                close_series = close_series.dropna()
+                if price is None and len(close_series) > 0:
                     price = _safe_float(close_series.iloc[-1])
-                if len(close_series) >= 2:
+                if prev_close is None and len(close_series) >= 2:
                     prev_close = _safe_float(close_series.iloc[-2])
+                
+                # 7-day change (~5 trading days back)
+                if len(close_series) >= 6 and price is not None:
+                    price_7d_ago = _safe_float(close_series.iloc[-6])
+                    if price_7d_ago and price_7d_ago != 0:
+                        change_7d = round(((price - price_7d_ago) / price_7d_ago) * 100, 2)
+                
+                # 30-day change (first data point in 1mo range)
+                if len(close_series) >= 2 and price is not None:
+                    price_30d_ago = _safe_float(close_series.iloc[0])
+                    if price_30d_ago and price_30d_ago != 0:
+                        change_30d = round(((price - price_30d_ago) / price_30d_ago) * 100, 2)
 
         if price is None:
-            return None, None
+            return None, None, None, None
 
         change_percent = 0.0
         if prev_close is not None and prev_close != 0:
             change_percent = ((price - prev_close) / prev_close) * 100
 
-        return round(price, 2), round(change_percent, 2)
+        return round(price, 2), round(change_percent, 2), change_7d, change_30d
     except Exception:
-        return None, None
+        return None, None, None, None
 
 def fetch_crypto_data():
     """Fetches Top 500 Crypto, creates a manifest AND a price file."""
@@ -242,7 +260,7 @@ def fetch_crypto_data():
     
     # Fetch 2 pages of 250 = 500 total
     for page in [1, 2]:
-        url = f"{base_url}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page={page}&sparkline=false"
+        url = f"{base_url}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page={page}&sparkline=false&price_change_percentage=7d,30d"
         try:
             print(f"  → Page {page}/2...")
             response = requests.get(url, headers=headers, timeout=30)
@@ -261,7 +279,9 @@ def fetch_crypto_data():
                 prices.append({
                     "symbol": symbol,
                     "price": coin['current_price'],
-                    "change_24h_percent": round(coin.get('price_change_percentage_24h', 0), 2),
+                    "change_24h_percent": round(coin.get('price_change_percentage_24h') or 0, 2),
+                    "change_7d_percent": round(coin.get('price_change_percentage_7d_in_currency') or 0, 2),
+                    "change_30d_percent": round(coin.get('price_change_percentage_30d_in_currency') or 0, 2),
                     "market_cap": coin.get('market_cap', 0),
                     "volume_24h": coin.get('total_volume', 0),
                     "logo_url": logo_url
@@ -292,13 +312,15 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
         print(f"  → Batch {i//batch_size + 1}/{(len(tickers_list)//batch_size) + 1} ({len(batch)} tickers)...")
         
         try:
-            # Download data for the entire batch
-            data = yf.download(batch, period="1d", group_by='ticker', threads=True, progress=False)
+            # Download 1 month of data so we can compute 7d & 30d changes
+            data = yf.download(batch, period="1mo", interval="1d", group_by='ticker', threads=True, progress=False)
             
             for symbol in batch:
                 try:
                     close_price = None
                     open_price = None
+                    change_7d = None
+                    change_30d = None
 
                     # Handle single ticker vs multi-ticker dataframe structure
                     if len(batch) == 1:
@@ -312,19 +334,39 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                     if df is not None and not df.empty and len(df) > 0:
                         close_series = df.get('Close')
                         open_series = df.get('Open')
+                        # Drop NaN rows (can occur in batch downloads with mixed trading days)
+                        if close_series is not None:
+                            close_series = close_series.dropna()
+                        if open_series is not None:
+                            open_series = open_series.dropna()
+
                         if close_series is not None and len(close_series) > 0:
                             close_price = _safe_float(close_series.iloc[-1])
+                            
+                            # 7-day change (~5 trading days back)
+                            if len(close_series) >= 6:
+                                price_7d_ago = _safe_float(close_series.iloc[-6])
+                                if price_7d_ago and price_7d_ago != 0:
+                                    change_7d = round(((close_price - price_7d_ago) / price_7d_ago) * 100, 2)
+                            
+                            # 30-day change (first available data point in 1mo range)
+                            if len(close_series) >= 2:
+                                price_30d_ago = _safe_float(close_series.iloc[0])
+                                if price_30d_ago and price_30d_ago != 0:
+                                    change_30d = round(((close_price - price_30d_ago) / price_30d_ago) * 100, 2)
+
                         if open_series is not None and len(open_series) > 0:
                             open_price = _safe_float(open_series.iloc[-1])
 
                     # Fallback if batch download didn't give a valid price
                     if close_price is None:
                         # Try yfinance single-ticker fallback first
-                        close_price, fallback_change = _fallback_quote(symbol)
+                        close_price, fallback_change, fb_7d, fb_30d = _fallback_quote(symbol)
                         
                         # If yfinance also failed, try Finnhub as last resort
                         if close_price is None:
                             close_price, fallback_change = _finnhub_quote(symbol)
+                            fb_7d, fb_30d = None, None
                         
                         if close_price is None:
                             failed.append(symbol)
@@ -334,6 +376,8 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                             "symbol": symbol,
                             "price": close_price,
                             "change_percent": fallback_change if fallback_change is not None else 0.0,
+                            "change_7d_percent": fb_7d,
+                            "change_30d_percent": fb_30d,
                             "logo_url": logo_lookup.get(symbol)
                         })
                         continue
@@ -342,13 +386,15 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                     if open_price is not None and open_price != 0:
                         change_percent = ((close_price - open_price) / open_price) * 100
                     else:
-                        _, fallback_change = _fallback_quote(symbol)
+                        _, fallback_change, _, _ = _fallback_quote(symbol)
                         change_percent = fallback_change if fallback_change is not None else 0.0
 
                     prices.append({
                         "symbol": symbol,
                         "price": round(close_price, 2),
                         "change_percent": round(float(change_percent), 2),
+                        "change_7d_percent": change_7d,
+                        "change_30d_percent": change_30d,
                         "logo_url": logo_lookup.get(symbol)
                     })
                     
