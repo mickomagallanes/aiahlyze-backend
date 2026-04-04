@@ -200,9 +200,40 @@ def _finnhub_quote(symbol):
         return None, None
 
 
+def _compute_annual_returns(close_series):
+    """
+    Given a pandas Series of monthly close prices (sorted oldest→newest),
+    returns (return_1y_percent, return_3y_percent, return_5y_percent) as annualized CAGR.
+    Uses actual date spans for accuracy. Returns None when not enough history.
+    """
+    if close_series is None or len(close_series) < 2:
+        return None, None, None
+
+    latest = _safe_float(close_series.iloc[-1])
+    if latest is None or latest <= 0:
+        return None, None, None
+
+    def _cagr(start_idx):
+        price = _safe_float(close_series.iloc[start_idx])
+        if price is None or price <= 0:
+            return None
+        years = (close_series.index[-1] - close_series.index[start_idx]).days / 365.25
+        if years < 0.5:
+            return None
+        return round(((latest / price) ** (1 / years) - 1) * 100, 2)
+
+    r1y = _cagr(-13) if len(close_series) >= 13 else None
+    r3y = _cagr(-37) if len(close_series) >= 37 else None
+    # For 5y, use the oldest available row in the 5y window (requires >= 55 months)
+    r5y = _cagr(0) if len(close_series) >= 55 else None
+
+    return r1y, r3y, r5y
+
+
 def _fallback_quote(symbol):
     """Try single-symbol fallback via yfinance.Ticker for better reliability.
-    Returns (price, change_percent, change_7d_percent, change_30d_percent)."""
+    Returns (price, change_percent, change_7d_percent, change_30d_percent,
+             return_1y_percent, return_3y_percent, return_5y_percent)."""
     try:
         t = yf.Ticker(symbol)
         fi = getattr(t, 'fast_info', None) or {}
@@ -235,16 +266,27 @@ def _fallback_quote(symbol):
                     if price_30d_ago and price_30d_ago != 0:
                         change_30d = round(((price - price_30d_ago) / price_30d_ago) * 100, 2)
 
+        # Get 5-year monthly history for annual return (CAGR) calculations
+        r1y, r3y, r5y = None, None, None
+        try:
+            hist_5y = t.history(period='5y', interval='1mo')
+            if hist_5y is not None and not hist_5y.empty:
+                close_5y = hist_5y.get('Close')
+                if close_5y is not None:
+                    r1y, r3y, r5y = _compute_annual_returns(close_5y.dropna())
+        except Exception:
+            pass
+
         if price is None:
-            return None, None, None, None
+            return None, None, None, None, None, None, None
 
         change_percent = 0.0
         if prev_close is not None and prev_close != 0:
             change_percent = ((price - prev_close) / prev_close) * 100
 
-        return round(price, 2), round(change_percent, 2), change_7d, change_30d
+        return round(price, 2), round(change_percent, 2), change_7d, change_30d, r1y, r3y, r5y
     except Exception:
-        return None, None, None, None
+        return None, None, None, None, None, None, None
 
 def fetch_crypto_data():
     """Fetches Top 500 Crypto, creates a manifest AND a price file."""
@@ -260,7 +302,7 @@ def fetch_crypto_data():
     
     # Fetch 2 pages of 250 = 500 total
     for page in [1, 2]:
-        url = f"{base_url}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page={page}&sparkline=false&price_change_percentage=7d,30d"
+        url = f"{base_url}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page={page}&sparkline=false&price_change_percentage=7d,30d,1y"
         try:
             print(f"  → Page {page}/2...")
             response = requests.get(url, headers=headers, timeout=30)
@@ -282,6 +324,7 @@ def fetch_crypto_data():
                     "change_24h_percent": round(coin.get('price_change_percentage_24h') or 0, 2),
                     "change_7d_percent": round(coin.get('price_change_percentage_7d_in_currency') or 0, 2),
                     "change_30d_percent": round(coin.get('price_change_percentage_30d_in_currency') or 0, 2),
+                    "return_1y_percent": round(coin.get('price_change_percentage_1y_in_currency') or 0, 2),
                     "market_cap": coin.get('market_cap', 0),
                     "volume_24h": coin.get('total_volume', 0),
                     "logo_url": logo_url
@@ -312,8 +355,24 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
         print(f"  → Batch {i//batch_size + 1}/{(len(tickers_list)//batch_size) + 1} ({len(batch)} tickers)...")
         
         try:
-            # Download 1 month of data so we can compute 7d & 30d changes
+            # Download 1 month of daily data for price/day/7d/30d changes
             data = yf.download(batch, period="1mo", interval="1d", group_by='ticker', threads=True, progress=False)
+            
+            # Download 5-year monthly data for annual return (CAGR) calculations
+            cagr_lookup = {sym: (None, None, None) for sym in batch}
+            try:
+                data_5y = yf.download(batch, period="5y", interval="1mo", group_by='ticker', threads=True, progress=False)
+                if data_5y is not None and not data_5y.empty:
+                    for sym in batch:
+                        try:
+                            df5 = data_5y if len(batch) == 1 else data_5y[sym]
+                            if df5 is not None and not df5.empty:
+                                c5 = df5['Close'].dropna()
+                                cagr_lookup[sym] = _compute_annual_returns(c5)
+                        except Exception:
+                            pass
+            except Exception:
+                pass
             
             for symbol in batch:
                 try:
@@ -361,12 +420,12 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                     # Fallback if batch download didn't give a valid price
                     if close_price is None:
                         # Try yfinance single-ticker fallback first
-                        close_price, fallback_change, fb_7d, fb_30d = _fallback_quote(symbol)
+                        close_price, fallback_change, fb_7d, fb_30d, fb_1y, fb_3y, fb_5y = _fallback_quote(symbol)
                         
                         # If yfinance also failed, try Finnhub as last resort
                         if close_price is None:
                             close_price, fallback_change = _finnhub_quote(symbol)
-                            fb_7d, fb_30d = None, None
+                            fb_7d, fb_30d, fb_1y, fb_3y, fb_5y = None, None, None, None, None
                         
                         if close_price is None:
                             failed.append(symbol)
@@ -378,6 +437,9 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                             "change_percent": fallback_change if fallback_change is not None else 0.0,
                             "change_7d_percent": fb_7d,
                             "change_30d_percent": fb_30d,
+                            "return_1y_percent": fb_1y,
+                            "return_3y_percent": fb_3y,
+                            "return_5y_percent": fb_5y,
                             "logo_url": logo_lookup.get(symbol)
                         })
                         continue
@@ -386,15 +448,19 @@ def fetch_yahoo_prices(manifest, filename, batch_size=50):
                     if open_price is not None and open_price != 0:
                         change_percent = ((close_price - open_price) / open_price) * 100
                     else:
-                        _, fallback_change, _, _ = _fallback_quote(symbol)
+                        _, fallback_change, _, _, _, _, _ = _fallback_quote(symbol)
                         change_percent = fallback_change if fallback_change is not None else 0.0
 
+                    r1y, r3y, r5y = cagr_lookup.get(symbol, (None, None, None))
                     prices.append({
                         "symbol": symbol,
                         "price": round(close_price, 2),
                         "change_percent": round(float(change_percent), 2),
                         "change_7d_percent": change_7d,
                         "change_30d_percent": change_30d,
+                        "return_1y_percent": r1y,
+                        "return_3y_percent": r3y,
+                        "return_5y_percent": r5y,
                         "logo_url": logo_lookup.get(symbol)
                     })
                     
