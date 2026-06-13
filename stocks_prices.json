@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-06-13T11:25:30.316148",
+  "last_updated_utc": "2026-06-13T14:19:40.787917",
   "prices": [
     {
       "symbol": "MMM",
@@ -2196,9 +2196,9 @@
       "change_percent": 1.73,
       "change_7d_percent": 5.23,
       "change_30d_percent": 16.03,
-      "return_1y_percent": 34.57,
-      "return_3y_percent": 31.89,
-      "return_5y_percent": 12.22,
+      "return_1y_percent": 37.87,
+      "return_3y_percent": 32.96,
+      "return_5y_percent": 12.77,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.53.com"
     },
     {
@@ -3063,11 +3063,11 @@
       "symbol": "KLAC",
       "price": 254.54,
       "change_percent": 7.13,
-      "change_7d_percent": -86.81,
-      "change_30d_percent": -86.22,
+      "change_7d_percent": 31.94,
+      "change_30d_percent": 37.79,
       "return_1y_percent": -71.42,
-      "return_3y_percent": -18.65,
-      "return_5y_percent": -5.2,
+      "return_3y_percent": 75.23,
+      "return_5y_percent": 51.42,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.kla.com"
     },
     {
@@ -3593,7 +3593,7 @@
       "change_percent": 0.02,
       "change_7d_percent": -2.65,
       "change_30d_percent": 5.32,
-      "return_1y_percent": 5.33,
+      "return_1y_percent": 5.34,
       "return_3y_percent": 9.83,
       "return_5y_percent": 1.24,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.msci.com"
@@ -4759,7 +4759,7 @@
       "change_percent": -1.61,
       "change_7d_percent": 5.22,
       "change_30d_percent": 11.41,
-      "return_1y_percent": 70.87,
+      "return_1y_percent": 70.86,
       "return_3y_percent": 55.07,
       "return_5y_percent": 32.35,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.tapestry.com"
@@ -5623,17 +5623,6 @@
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.allianceglobalinc.com"
     },
     {
-      "symbol": "ACMDY",
-      "price": 1.35,
-      "change_percent": 0.0,
-      "change_7d_percent": 0.0,
-      "change_30d_percent": 0.0,
-      "return_1y_percent": 0.0,
-      "return_3y_percent": -15.53,
-      "return_5y_percent": -8.13,
-      "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.atlasmining.com.ph"
-    },
-    {
       "symbol": "AYAAY",
       "price": 5.0,
       "change_percent": 0.0,
@@ -5777,5 +5766,7 @@
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.mondenissin.com"
     }
   ],
-  "failed_tickers": []
+  "failed_tickers": [
+    "ACMDY"
+  ]
 }
