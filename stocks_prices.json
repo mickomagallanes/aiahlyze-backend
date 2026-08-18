@@ -1,5 +1,5 @@
 {
-  "last_updated_utc": "2026-08-18T05:37:07.594666",
+  "last_updated_utc": "2026-08-18T06:58:02.942746",
   "prices": [
     {
       "symbol": "MMM",
@@ -256,10 +256,10 @@
     },
     {
       "symbol": "AMCR",
-      "price": 45.53,
-      "change_percent": -1.17,
-      "change_7d_percent": -4.87,
-      "change_30d_percent": 5.32,
+      "price": 46.03,
+      "change_percent": 0.07,
+      "change_7d_percent": -3.82,
+      "change_30d_percent": 6.48,
       "return_1y_percent": 8.69,
       "return_3y_percent": 2.2,
       "return_5y_percent": -0.73,
@@ -336,10 +336,10 @@
       "price": 569.54,
       "change_percent": -0.26,
       "change_7d_percent": 3.18,
-      "change_30d_percent": 8.57,
-      "return_1y_percent": 10.55,
-      "return_3y_percent": 20.08,
-      "return_5y_percent": 18.33,
+      "change_30d_percent": 8.23,
+      "return_1y_percent": 10.21,
+      "return_3y_percent": 19.96,
+      "return_5y_percent": 18.26,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.ameriprise.com"
     },
     {
@@ -391,10 +391,10 @@
       "price": 355.83,
       "change_percent": -0.35,
       "change_7d_percent": -0.69,
-      "change_30d_percent": -1.69,
-      "return_1y_percent": -4.93,
-      "return_3y_percent": 2.09,
-      "return_5y_percent": 4.81,
+      "change_30d_percent": -1.92,
+      "return_1y_percent": -5.14,
+      "return_3y_percent": 2.01,
+      "return_5y_percent": 4.76,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.aon.com"
     },
     {
@@ -1916,17 +1916,6 @@
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.equinix.com"
     },
     {
-      "symbol": "EQR",
-      "price": 65.97,
-      "change_percent": -0.24,
-      "change_7d_percent": -1.64,
-      "change_30d_percent": -4.11,
-      "return_1y_percent": 0.62,
-      "return_3y_percent": 3.6,
-      "return_5y_percent": -1.03,
-      "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.equityapartments.com"
-    },
-    {
       "symbol": "ERIE",
       "price": 255.99,
       "change_percent": 0.08,
@@ -3295,10 +3284,10 @@
       "price": 187.82,
       "change_percent": -0.46,
       "change_7d_percent": -2.0,
-      "change_30d_percent": 3.72,
-      "return_1y_percent": -8.66,
-      "return_3y_percent": -0.23,
-      "return_5y_percent": 5.73,
+      "change_30d_percent": 3.14,
+      "return_1y_percent": -9.18,
+      "return_3y_percent": -0.42,
+      "return_5y_percent": 5.61,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.corporate.marsh.com"
     },
     {
@@ -4055,9 +4044,9 @@
       "change_percent": 1.09,
       "change_7d_percent": 0.45,
       "change_30d_percent": -4.53,
-      "return_1y_percent": 16.73,
-      "return_3y_percent": 13.76,
-      "return_5y_percent": 11.76,
+      "return_1y_percent": 15.68,
+      "return_3y_percent": 13.42,
+      "return_5y_percent": 11.55,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.pinnaclewest.com"
     },
     {
@@ -4257,6 +4246,17 @@
       "return_3y_percent": 21.43,
       "return_5y_percent": 16.11,
       "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=www.raymondjames.com"
+    },
+    {
+      "symbol": "RDDT",
+      "price": 178.09,
+      "change_percent": 1.31,
+      "change_7d_percent": 10.14,
+      "change_30d_percent": -1.95,
+      "return_1y_percent": -26.93,
+      "return_3y_percent": null,
+      "return_5y_percent": null,
+      "logo_url": "https://www.google.com/s2/favicons?sz=128&domain=redditinc.com"
     },
     {
       "symbol": "RTX",
@@ -5756,6 +5756,7 @@
     }
   ],
   "failed_tickers": [
+    "VMRK",
     "ACMDY"
   ]
 }
